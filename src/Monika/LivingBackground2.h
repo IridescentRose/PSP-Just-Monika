@@ -1,8 +1,10 @@
 #pragma once
 #include <cstdint>
 #include <Graphics/2D/SpriteBase.h>
+#include <Audio/AudioClip.h>
 using namespace Stardust::Graphics::Render2D;
 using namespace Stardust::Graphics;
+using namespace Stardust;
 
 namespace Monika {
 
@@ -21,13 +23,15 @@ namespace Monika {
 
 	private:
 		void calculateSunRiseSet();
+		void calculateWeatherDay();
 
 		DayTime sunRise, sunSet;
 		bool newDay;
 
+		Audio::AudioClip *rain_sound, *thunder1, *thunder2;
+		int randomTick;
+
 		bool rain;
-		DayTime overCastTime[3];
-		DayTime rainTime;
 		
 		int dayTime;
 		uint8_t day;

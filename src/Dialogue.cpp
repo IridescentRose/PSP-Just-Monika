@@ -14,7 +14,7 @@ Dialogue::Dialogue()
 
 	main->setOptions({ 1.15f, 0xFFFFFFFF, INTRAFONT_ALIGN_LEFT });
 	main->setPosition({26, 208});
-	main->setSpeed(4);
+	main->setSpeed(2);
 
 	dialogueBox->SetPosition(240, 216);
 	dialogueBox->Scale(1.15f, 1.15f);
