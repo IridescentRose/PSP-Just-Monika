@@ -1,6 +1,7 @@
 #pragma once
 #include <Graphics/2D/SpriteBase.h>
 #include "GameDialog.h"
+#include <Audio/AudioClip.h>
 
 using namespace Stardust;
 using namespace Stardust::Graphics;
@@ -42,6 +43,7 @@ private:
 
 	GameDialog* main;
 	Dialog* info;
+	Audio::AudioClip* sel;
 };
 
 class DialogStack {

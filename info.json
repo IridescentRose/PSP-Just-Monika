@@ -1,5 +1,5 @@
 {
-	"firstPlayed" : true,
-	"numReload" : 2,
+	"firstPlayed" : false,
+	"numReload" : 1,
 	"username" : "Dave"
-}}}}
+}

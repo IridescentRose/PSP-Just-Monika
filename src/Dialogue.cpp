@@ -14,13 +14,14 @@ Dialogue::Dialogue()
 
 	main->setOptions({ 1.15f, 0xFFFFFFFF, INTRAFONT_ALIGN_LEFT });
 	main->setPosition({26, 208});
-	main->setSpeed(1);
+	main->setSpeed(4);
 
 	dialogueBox->SetPosition(240, 216);
 	dialogueBox->Scale(1.15f, 1.15f);
 
 	selPos = 0;
 	display = false;
+	sel = new Audio::AudioClip("./assets/music/sel.wav");
 }
 
 void Dialogue::reset()
@@ -57,6 +58,7 @@ void Dialogue::update()
 			switch (info->interactionType) {
 			case INTERACTION_TYPE_NONE: {
 				if (Utilities::KeyPressed(PSP_CTRL_CROSS)) {
+					sel->Play(5);
 					hide();
 				}
 				break;

@@ -103,6 +103,8 @@ void MenuState::update(GameStateManager* st)
 		}
 		else {
 			dialog->update();
+			dial->update();
+			dialog->update();
 		}
 	}
 
