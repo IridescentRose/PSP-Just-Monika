@@ -25,6 +25,7 @@ public:
 	static int audio_thread(unsigned int, void*);
 
 	void awaken();
+	void randomPick();
 
 private:
 	Dialogue* dialog;
@@ -34,6 +35,8 @@ private:
 	Sprite* spr, *bg;
 	Utilities::Thread* athr;
 
+	bool speaking;
+	int timeTilNextMessage;
 };
 
 extern Audio::AudioClip* adc;

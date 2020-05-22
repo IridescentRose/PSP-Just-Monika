@@ -8,6 +8,8 @@ MenuState::MenuState()
 Audio::AudioClip* adc;
 std::string username;
 
+
+Json::Value messageRoot;
 void MenuState::init()
 {
 	dialog = new Dialogue();
@@ -25,7 +27,7 @@ void MenuState::init()
 	adc = NULL;
 	athr = new Utilities::Thread(audio_thread);
 	athr->Start(0);
-
+	messageRoot = Utilities::JSON::openJSON("./assets/script/messages.json");
 
 	username = v["username"].asString();
 
@@ -67,6 +69,8 @@ void MenuState::init()
 	f << v2;
 	f.close();
 
+	timeTilNextMessage = 600;
+	speaking = true;
 }
 
 void MenuState::cleanup()
@@ -75,6 +79,8 @@ void MenuState::cleanup()
 
 
 
+bool audioPlayFlag = false;
+int stage = rand() % 13;
 void MenuState::update(GameStateManager* st)
 {
 	dial->update();
@@ -89,8 +95,38 @@ void MenuState::update(GameStateManager* st)
 		}
 	}
 	else {
-		dialog->update();
+		if (speaking && !dialog->isEngaged()) {
+			speaking = false;
+		}
+		else {
+			dialog->update();
+		}
 	}
+
+	if (!speaking) {
+		timeTilNextMessage--;
+
+		if (timeTilNextMessage <= 0) {
+			randomPick();
+			timeTilNextMessage = 400 + rand() % 1200;
+			speaking = true;
+		}
+	}
+
+	if (audioPlayFlag) {
+		std::stringstream strStream;
+		strStream << "./assets/music/" << stage << ".bgm";
+
+		if (adc != NULL) {
+			delete adc;
+		}
+
+		adc = new Audio::AudioClip(strStream.str(), true);
+
+		audioPlayFlag = false;
+		adc->Play();
+	}
+
 }
 
 void MenuState::draw(GameStateManager* st)
@@ -108,23 +144,18 @@ void MenuState::draw(GameStateManager* st)
 
 int MenuState::audio_thread(unsigned int, void*)
 {
-	int stage = rand() % 13;
 	int numTicksLeft = 0;
 	while (1) {
 
 		numTicksLeft--;
 
 		if (numTicksLeft <= 0) {
-			std::stringstream strStream;
-			strStream << "./assets/music/" << stage << ".bgm";
+			audioPlayFlag = true;
 
-			if (adc != NULL) {
-				adc->Stop();
-				delete adc;
+			stage++;
+			if (stage > 12) {
+				stage = 0;
 			}
-
-			adc = new Audio::AudioClip(strStream.str(), true);
-			adc->Play();
 
 			switch (stage) {
 			case 0: {numTicksLeft = 240; break; }
@@ -142,10 +173,6 @@ int MenuState::audio_thread(unsigned int, void*)
 			case 12: {numTicksLeft = 181; break; }
 			}
 
-			stage++;
-			if (stage > 12) {
-				stage = 0;
-			}
 
 		}
 
@@ -162,6 +189,19 @@ void MenuState::awaken()
 		Dialog* d = new Dialog();
 		d->interactionType = INTERACTION_TYPE_NONE;
 		d->text = v[std::to_string(reloads)][i].asString();
+
+		dial->addDialog(d);
+	}
+}
+
+void MenuState::randomPick()
+{
+	int choice = rand() % 57;
+
+	for (int i = 0; i < messageRoot[std::to_string(choice)].size(); i++) {
+		Dialog* d = new Dialog();
+		d->interactionType = INTERACTION_TYPE_NONE;
+		d->text = messageRoot[std::to_string(choice)][i].asString();
 
 		dial->addDialog(d);
 	}

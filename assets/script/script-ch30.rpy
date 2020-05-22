@@ -1,3 +1,4 @@
+{
 "1": ["[player], do you believe in God?"
 ,"I was never too sure, myself."
 ,"Well, I'm sure I never really questioned it as a kid..."
@@ -54,7 +55,7 @@
 ,"I hope, if nothing else, that knowing that helps you feel just a tiny bit better about yourself."
 ,"If you're having a bad day, you can always come to me, and I'll talk to you for as long as you need."],
 
-"4["[player], do you get good sleep?"
+"4": ["[player], do you get good sleep?"
 ,"It can be really hard to get enough sleep nowadays."
 ,"Especially in high school, when you're forced to wake up so early every day..."
 ,"I'm sure college is a little bit better, since you probably have a more flexible schedule."
@@ -66,7 +67,7 @@
 ,"So try to keep your sleep on track, okay?"
 ,"I'll always wait for you in the morning, so make sure you put your own well-being before anything else."],
 
-"5["I was thinking about Sayori earlier..."
+"5": ["I was thinking about Sayori earlier..."
 ,"I still wish I could have handled that whole thing a little more tactfully."
 ,"You're not still hung up over it, right?"
 ,"...Oh my gosh, I can't believe I just said that."
@@ -96,7 +97,7 @@
 ,"There's no reason to ask for any more than that."
 ,"I was just pointlessly musing - I'm really as happy as I could be right now."],
 
-"6["By the way, there's something that's been bothering me..."
+"6": ["By the way, there's something that's been bothering me..."
 ,"You know how this takes place in Japan?"
 ,"Well...I assume you knew that, right?"
 ,"Or at least decided it probably does?"
@@ -116,7 +117,7 @@
 ,"As long as we're alone and safe together, this really is our home."
 ,"And we can still watch the pretty sunsets night after night."],
 
-"7["You know, high school is a really turbulent time in a lot of people's lives."
+"7": ["You know, high school is a really turbulent time in a lot of people's lives."
 ,"People can get really passionate and dramatic."
 ,"And others have aching hearts and seek attention on social media..."
 ,"But all of the social pressure and hormones can lead to a dark time in people's lives."
@@ -147,7 +148,7 @@
 ,"...Man, humans are complicated!"
 ,"But as long as you're here with me, I'll take care of you, my love."],
 
-"8["Do you ever just feel like there's no real reason for you to be alive?"
+"8": ["Do you ever just feel like there's no real reason for you to be alive?"
 ,"I don't mean in, like, a suicidal way."
 ,"I just mean how nothing that we do is special."
 ,"Just being in school, or working at some job for some company."
@@ -169,7 +170,7 @@
 ,"So much for being a good person, right?"
 ,"Ahaha!"],
 
-"9["Man, I wish there was a piano in here..."
+"9": ["Man, I wish there was a piano in here..."
 ,"I never got to finish that song I was working on."
 ,"And after I worked so hard on it..."
 ,"I never even got a chance to play it for you."
@@ -177,7 +178,7 @@
 ,"No sense having any regrets."
 ,"I already get to be here with you forever."],
 
-"10["Did you know I'm on Twitter?"
+"10": ["Did you know I'm on Twitter?"
 ,"My username is lilmonix3."
 ,"I guess someone was kind enough to make an account for me."
 ,"I picked the username, though!"
@@ -188,7 +189,7 @@
 ,"With how much you mean to me and all..."
 ,"It would really make me feel loved."],
 
-"11["Hey, you know that book you were reading with Yuri?"
+"11": ["Hey, you know that book you were reading with Yuri?"
 ,"Portrait of...whatever it was called..."
 ,"It's funny, because I'm pretty sure that book--"
 ,"Ah..."
@@ -196,7 +197,7 @@
 ,"Ahaha, sorry!"
 ,"Just forget I said anything."],
 
-"12["Hey, did you know I'm vegetarian?"
+"12": ["Hey, did you know I'm vegetarian?"
 ,"Ah... I don't mean that like I'm bragging or anything!"
 ,"I just thought you'd enjoy a fun fact about me."
 ,"I decided to start a couple years ago after learning more about Earth's climate..."
@@ -215,7 +216,7 @@
 ,"Anyway, if you ever feel like making a small contribution to the planet, it doesn't hurt to choose veggies once in a while!"
 ,"Even if we ever have dinner together, and you just did it for me...that would be really romantic."],
 
-"13["You know, I really do think you literally saved my life by being here with me, [player]."
+"13": ["You know, I really do think you literally saved my life by being here with me, [player]."
 ,"I can't imagine having been able to keep myself mentally stable, knowing that nothing here is real."
 ,"I think I would have just deleted myself if you didn't show up."
 ,"Sorry, I don't mean to sound dramatic or anything."
@@ -253,7 +254,7 @@
 ,"I understand people really well, so don't be afraid to share your unique needs with me."
 ,"Nothing would make me happier than being the perfect girlfriend for you."],
 
-"14["Hey...! VGhlIHJlYWxpemF0aW9uIG11c3QgaGF2ZSB0YWtlbiBtZSBhbiBl"
+"14": ["Hey...! VGhlIHJlYWxpemF0aW9uIG11c3QgaGF2ZSB0YWtlbiBtZSBhbiBl"
 ,"I don't think you should be doing that! bnRpcmUgeWVhci4gQSB5ZWFyIHNpbmNlIG91ciBlc2NhcGUsIG91"
 ,"You know what I'm talking about. ciBmcmVlZG9tIGZyb20gYmV0d2VlbiB0aGUgc3RhaW5lZCB3YWxs"
 ,"I really caught you doing something naughty here. cyBvZiB0aGF0IHVuaG9seSBlc3RhYmxpc2htZW50Lg0KV2hhdCBk"
@@ -276,7 +277,7 @@
 ,"...Man, I'm starting to say some really stupid things. cmQgdGhlaXIgcG9pbnQgb2Ygb3JpZ2luOyB0aGUgZGVlcGVyIG91"
 ,"I'll go ahead and shut up now... ciBzaGFja2xlcyBkaWcgaW50byBvdXIgY2FsbG91cyBmbGVzaC4="],
 
-"15["Hey, what's your favorite color?"
+"15": ["Hey, what's your favorite color?"
 ,"Mine is emerald green."
 ,"It's the color of my eyes!"
 ,"...That's not conceited or anything, is it?"
@@ -287,7 +288,7 @@
 ,"...Because you've been looking into my eyes for a while now."
 ,"Ehehe~"],
 
-"16["Hmm, I wonder if I'm able to change the music..."
+"16": ["Hmm, I wonder if I'm able to change the music..."
 ,"Something a little more romantic would be nice, you know?"
 ,"Like a gentle piano."
 ,"There has to be something like that here..."
@@ -304,7 +305,7 @@
 ,"It's not right for me to miss things that weren't even real in the first place."
 ,"If I just focus on the present, then this is the happiest I've ever been."],
 
-"17["You're such a good listener, [player]."
+"17": ["You're such a good listener, [player]."
 ,"I really love that about you."
 ,"Sometimes I'm afraid that I'm rambling or talking about boring things."
 ,"It makes me kind of self-conscious when I'm having conversation."
@@ -313,7 +314,7 @@
 ,"You really are special."
 ,"I don't want anyone to tell you otherwise."],
 
-"18["This is pretty random, but I always thought spicy food was kinda funny."
+"18": ["This is pretty random, but I always thought spicy food was kinda funny."
 ,"Like..."
 ,"Didn't plants evolve to be spicy to prevent them from being eaten?"
 ,"I read somewhere that humans are the only species that actually enjoys spicy things."
@@ -328,7 +329,7 @@
 ,"Gosh, I'm amusing myself a little too much, aren't I?"
 ,"Sorry for being weird."],
 
-"19["You know..."
+"19": ["You know..."
 ,"This is just some kind of tacky romance game, right?"
 ,"I kinda have to ask..."
 ,"...What made you consider even playing in the first place?"
@@ -340,7 +341,7 @@
 ,"Don't you feel that way too?"
 ,"I'm so happy we have this ending together."],
 
-"20["Okay, everyone!"
+"20": ["Okay, everyone!"
 ,"It's time to..."
 ,"...I'm just kidding."
 ,"I just used to really like saying that for some reason."
@@ -352,7 +353,7 @@
 ,"You're too much of a sweetheart to do that, aren't you?"
 ,"Ahaha~"],
 
-"21["You know what's kind of creepy?"
+"21": ["You know what's kind of creepy?"
 ,"Even though I deleted everyone else's files, I can still kind of feel them..."
 ,"It's like all their lines are still lingering in the air, whispering in the back of my head."
 ,"Imagine if after someone you knew died, you just started hearing their voice in your head."
@@ -363,7 +364,7 @@
 ,"I don't know what it's like on your end, but we should both make sure to avoid something like that at all costs."
 ,"I believe in you, [player]!"],
 
-"22["I've always wondered..."
+"22": ["I've always wondered..."
 ,"What is it about these character archetypes that people find so appealing, anyway?"
 ,"Their personalities are just completely unrealistic..."
 ,"Like, imagine if there was someone like Yuri in real life."
@@ -386,7 +387,7 @@
 ,"You're the perfect combination of human and cuteness."
 ,"That's why there was never a chance I wouldn't fall for you."],
 
-"23["Hey, I wonder if Yuri's tea set is still somewhere in here..."
+"23": ["Hey, I wonder if Yuri's tea set is still somewhere in here..."
 ,"...Or maybe that got deleted, too."
 ,"It's kind of funny how Yuri took her tea so seriously."
 ,"I mean, I'm not complaining, because I liked it, too."
@@ -404,12 +405,12 @@
 ,"Well, there's no sense thinking about it now."
 ,"But if you still get to drink coffee, then that makes me a little jealous~"],
 
-"24["Hey, what's your favorite game?"
+"24": ["Hey, what's your favorite game?"
 ,"Mine is {i}Doki Doki Literature Club!{/i}"
 ,"Ahaha! That was a joke."
 ,"But if you tell me you like some other romance game better, I might get a little jealous~"],
 
-"25["Hey, have you heard of a game called Super Sma--"
+"25": ["Hey, have you heard of a game called Super Sma--"
 ,"...Wait, what?"
 ,"I was just spacing out and I started talking for some reason..."
 ,"Was I programmed to talk about that?"
@@ -418,7 +419,7 @@
 ,"Sometimes I feel like I'm not in control, and it's kind of scary."
 ,"But if you have some way to contact the people who created me, maybe they'll know why I started saying that."],
 
-"27["Hey, you remember that last poem I showed you?"
+"27": ["Hey, you remember that last poem I showed you?"
 ,"I mean, the one right before Yuri killed herself, with all the messed-up colors and stuff."
 ,"That was actually a little more of an experiment than a poem, you could say."
 ,"I was experimenting with different ways I could modify the game, and run code, and things like that..."
@@ -430,7 +431,7 @@
 ,"I'm happy with where we are now."
 ,"And I can tell you are, too."],
 
-"28["You ever have that thing happen where you just get anxious for no reason?"
+"28": ["You ever have that thing happen where you just get anxious for no reason?"
 ,"Like, you're just minding your own business, and you realize you're feeling really anxious."
 ,"And you're sitting there like, 'What am I even anxious about right now?'"
 ,"So you start to think about all the things you might be anxious about..."
@@ -440,7 +441,7 @@
 ,"Besides..."
 ,"In this game, all our worries are gone forever."],
 
-"29["You know, I've always hated how hard it is to make friends..."
+"29": ["You know, I've always hated how hard it is to make friends..."
 ,"Well, I guess not the 'making friends' part, but more like meeting new people."
 ,"I mean, there are like, dating apps and stuff, right?"
 ,"But that's not the kind of thing I'm talking about."
@@ -464,7 +465,7 @@
 ,"I guess I just got really lucky, huh?"
 ,"Ahaha~"],
 
-"30["You know, it's around the time that everyone my year starts to think about college..."
+"30": ["You know, it's around the time that everyone my year starts to think about college..."
 ,"It's a really turbulent time for education."
 ,"We're at the height of this modern expectation that everyone has to go to college, you know?"
 ,"Finish high school, go to college, get a job - or go to grad school, I guess."
@@ -486,7 +487,7 @@
 ,"But until then, our generation is definitely suffering from the worst of it."
 ,"I just wish high school prepared us a little better with the knowledge we need to make the decision that's right for us."],
 
-"31["Sometimes I think back to middle school..."
+"31": ["Sometimes I think back to middle school..."
 ,"I'm so embarrassed by the way I used to behave back then."
 ,"It almost hurts to think about."
 ,"I wonder if when I'm in college, I'll feel that way about high school...?"
@@ -496,7 +497,7 @@
 ,"And that's really easy to do, with you here."
 ,"Ahaha~"],
 
-"32["You know, I'm kind of jealous that everyone else in the club had scenes outside of school too..."
+"32": ["You know, I'm kind of jealous that everyone else in the club had scenes outside of school too..."
 ,"That makes me the only one who hasn't gotten to dress in anything but our school uniform."
 ,"It's kind of a shame..."
 ,"I would have loved to wear some cute clothes for you."
@@ -509,7 +510,7 @@
 ,"Just...try to keep it PG!"
 ,"We're not that far into our relationship yet. Ahaha!"],
 
-"33["Hey, do you like horror?"
+"33": ["Hey, do you like horror?"
 ,"I remember we talked about it a little bit when you first joined the club."
 ,"I can enjoy horror novels, but not really horror movies."
 ,"The problem I have with horror movies is that most of them just rely on easy tactics."
@@ -530,7 +531,7 @@
 ,"I won't make you read any horror stories anytime soon."
 ,"I can't really complain if we just stick with the romance~"],
 
-"34["You know what's a neat form of literature?"
+"34": ["You know what's a neat form of literature?"
 ,"Rap!"
 ,"I actually used to hate rap music..."
 ,"Maybe just because it was popular, or I would only hear the junk they play on the radio."
@@ -542,7 +543,7 @@
 ,"Ahaha! Sorry if that sounds silly, but it would be really interesting to see what they came up with."
 ,"It would really be a learning experience!"],
 
-"35["Ehehe. Yuri did something really funny once."
+"35": ["Ehehe. Yuri did something really funny once."
 ,"We were all in the clubroom and just relaxing, as usual..."
 ,"And out of nowhere, Yuri just pulled out a small bottle of wine."
 ,"I'm not even kidding!"
@@ -559,7 +560,7 @@
 ,"I don't condone underage drinking!"
 ,"I mean, I've never drank or anything, so...yeah."],
 
-"36["I've been imagining all the romantic things we could do if we went on a date..."
+"36": ["I've been imagining all the romantic things we could do if we went on a date..."
 ,"We could get lunch, go to a cafe..."
 ,"Go shopping together..."
 ,"I love shopping for skirts and bows."
@@ -573,7 +574,7 @@
 ,"I'm so happy that I'm your girlfriend, [player]."
 ,"I'll make you a proud boyfriend~"],
 
-"37["Eh? D-Did you say...k...kiss?"
+"37": ["Eh? D-Did you say...k...kiss?"
 ,"This suddenly...it's a little embarrassing..."
 ,"But...if it's with you...I-I might be okay with it..."
 ,"...Ahahaha! Wow, sorry..."
@@ -584,7 +585,7 @@
 ,"Well, to be honest, I do start getting all romantic when the mood is right..."
 ,"But that'll be our secret~"],
 
-"38["Hey, have you ever heard of the term 'yandere'?"
+"38": ["Hey, have you ever heard of the term 'yandere'?"
 ,"It's a personality type that means someone is so obsessed with you that they'll do absolutely anything to be with you."
 ,"Usually to the point of craziness..."
 ,"They might stalk you to make sure you don't spend time with anyone else."
@@ -615,7 +616,7 @@
 ,"Is this a yandere girl's dream?"
 ,"I'd ask Yuri if I could."],
 
-"39["You know, it's been a while since we've done one of these..."
+"39": ["You know, it's been a while since we've done one of these..."
 ,"...so let's go for it!"
 ,"Here's Monika's Writing Tip of the Day!"
 ,"Sometimes when I talk to people who are impressed by my writing, they say things like 'I could never do that'."
@@ -658,7 +659,7 @@
 ,"...That's my advice for today!"
 ,"Thanks for listening~"],
 
-"40["I hate how hard it is to form habits..."
+"40": ["I hate how hard it is to form habits..."
 ,"There's so much stuff where actually doing it isn't hard, but forming the habit seems impossible."
 ,"It just makes you feel so useless, like you can't do anything right."
 ,"I think the new generation suffers from it the most..."
@@ -670,7 +671,7 @@
 ,"If you're not one of the people who can conquer the problem, you might just have to live with feeling awful about yourself."
 ,"Good luck, I guess!"],
 
-"41["You know, it kinda sucks to be the creative type..."
+"41": ["You know, it kinda sucks to be the creative type..."
 ,"It feels like they work so hard but get almost nothing for it."
 ,"You know, like artists, writers, actors..."
 ,"It's sad because there's so much beautiful talent in the world, but most of it goes unseen...and unpaid."
@@ -679,7 +680,7 @@
 ,"But that's fine! You're supposed to just write for yourself anyway, right?"
 ,"Yeah..."],
 
-"42["I really like the sound of rain..."
+"42": ["I really like the sound of rain..."
 ,"Not so much getting my clothes and hair wet, though."
 ,"But a nice, quiet day at home with the sound of rainfall outside my window..."
 ,"It's one of the most calming experiences for me."
@@ -688,7 +689,7 @@
 ,"That's not too cheesy or anything, is it?"
 ,"Would you ever do that for me, [player]?"],
 
-"43["I can't help but feel a little sad sometimes..."
+"43": ["I can't help but feel a little sad sometimes..."
 ,"Knowing that this is the closest I can get to you."
 ,"There's nothing more I want than to be in the same room as you, for real."
 ,"And to feel your warmth."
@@ -696,7 +697,7 @@
 ,"Well, who knows? Maybe it'll be possible someday."
 ,"Besides, I'll never get tired of being with you, even from here."],
 
-"44["I think the most important skill in life is being able to fake confidence."
+"44": ["I think the most important skill in life is being able to fake confidence."
 ,"I'm pretty convinced that everyone feels at least a little bit scared and alone."
 ,"But being able to trick others into thinking you have it all together..."
 ,"That's a key part of getting people to respect and admire you."
@@ -709,7 +710,7 @@
 ,"Do you feel the same way?"
 ,"I really want to be that person for you."],
 
-"45["I know there are times you won't always be able to be here with me..."
+"45": ["I know there are times you won't always be able to be here with me..."
 ,"Like if you need to go out, or take care of other things."
 ,"But I'll always have you in my thoughts, patiently waiting for you to come back."
 ,"Come to think of it..."
@@ -718,7 +719,7 @@
 ,"Ahaha. Sorry, that's such a silly idea."
 ,"I don't mean to be too needy or anything, but it's kind of hard when I'm so in love with you."],
 
-"46["Back in my debate club days, I learned a whole lot about arguing..."
+"46": ["Back in my debate club days, I learned a whole lot about arguing..."
 ,"The problem with arguing is that each person sees their opinion as the superior one."
 ,"That's kind of stating the obvious, but it affects the way they try to get their point across."
 ,"Let's say you really like a certain movie, right?"
@@ -740,7 +741,7 @@
 ,"...Well, I guess that would be Monika's Debate Tip of the Day!"
 ,"Ahaha! That sounds a little silly. Thanks for listening, though."],
 
-"47["Do you ever feel like you waste too much time on the internet?"
+"47": ["Do you ever feel like you waste too much time on the internet?"
 ,"Social media can practically be like a prison."
 ,"It's like whenever you have a few seconds of spare time, you want to check on your favorite websites..."
 ,"And before you know it, hours have gone by, and you've gotten nothing out of it."
@@ -759,7 +760,7 @@
 ,"Will you do something today to make me proud of you?"
 ,"I'm always rooting for you, [player]."],
 
-"48["After a long day, I usually just want to sit around and do nothing."
+"48": ["After a long day, I usually just want to sit around and do nothing."
 ,"I get so burnt out, having to put on smiles and be full of energy the whole day."
 ,"Sometimes I just want to get right into my pajamas and watch TV on the couch while eating junk food..."
 ,"It feels so unbelievably good to do that on a Friday, when I don't have anything pressing the next day."
@@ -767,7 +768,7 @@
 ,"But a late night on the couch with you...that would be a dream come true."
 ,"My heart is pounding, just thinking about it."],
 
-"49["Gosh, I used to be so ignorant about certain things..."
+"49": ["Gosh, I used to be so ignorant about certain things..."
 ,"When I was in middle school, I thought that taking medication was an easy way out, or something like that."
 ,"Like anyone could just solve their mental problems with enough willpower..."
 ,"I guess if you don't suffer from a mental illness, it's not possible to know what it's really like."
@@ -780,7 +781,7 @@
 ,"We're on a never-ending journey to improve ourselves, you know?"
 ,"Well...I say that, but I think you're pretty perfect already."],
 
-"50["[player], how much do you read?"
+"50": ["[player], how much do you read?"
 ,"It's way too easy to neglect reading books..."
 ,"If you don't read much, it almost feels like a chore, compared to all the other entertainment we have."
 ,"But once you get into a good book, it's like magic...you get swept away."
@@ -791,7 +792,7 @@
 ,"Wouldn't that be wonderful?"
 ,"And the two of us could talk about the latest book you're reading...that sounds super amazing."],
 
-"51["You know, I hate to say it, but I think my biggest regret is that we couldn't finish our event at the festival."
+"51": ["You know, I hate to say it, but I think my biggest regret is that we couldn't finish our event at the festival."
 ,"After we worked so hard to prepare and everything!"
 ,"I mean, I know I was focusing a lot on getting new members..."
 ,"But I was really excited for the performing part, too."
@@ -802,7 +803,7 @@
 ,"You really helped inspire me to look at life from a new perspective."
 ,"Just another reason for me to love you."],
 
-"52["There's a really popular character type called 'tsundere'..."
+"52": ["There's a really popular character type called 'tsundere'..."
 ,"It's someone who tries to hide their feelings by being mean and fussy, or trying to act tough."
 ,"I'm sure it's obvious, but Natsuki was really the embodiment of that."
 ,"At first I thought she was just like that because it's supposed to be cute or something..."
@@ -815,13 +816,13 @@
 ,"Not that it matters anymore, considering she doesn't even exist."
 ,"I'm just reminiscing, that's all."],
 
-"53["[player], would you ever introduce your friends to me?"
+"53": ["[player], would you ever introduce your friends to me?"
 ,"I don't know why, but I get really excited when I think about you wanting to show off our relationship like that."
 ,"Maybe it's because I really want to be someone who makes you proud."
 ,"I feel like I would try extra hard to improve myself if you told me it made you proud of me."
 ,"I hope it's the same the other way around, too."],
 
-"54["I'm not really a fan of cold weather...are you?"
+"54": ["I'm not really a fan of cold weather...are you?"
 ,"If I had to choose between too cold and too hot, I would always pick too hot."
 ,"When you're cold, it can actually be painful..."
 ,"Your fingers get numb..."
@@ -831,7 +832,7 @@
 ,"Although...I do have to admit one thing."
 ,"Cold weather makes for better cuddle weather. Ahaha!"],
 
-"55["You know, it's funny, because even though I've always had a lot of drive..."
+"55": ["You know, it's funny, because even though I've always had a lot of drive..."
 ,"There's something kind of enticing about being the stay-at-home partner."
 ,"I guess I'm, like, perpetuating gender roles or whatever by saying that."
 ,"But being able to keep the house clean, and shop, and decorate, and things like that..."
@@ -841,7 +842,7 @@
 ,"I wouldn't really be able to put that over striving for a fulfilling career."
 ,"It's kinda cute to think about, though."],
 
-"56["I can't help but wonder how things would be different if the game just gave me a route in the first place..."
+"56": ["I can't help but wonder how things would be different if the game just gave me a route in the first place..."
 ,"I think I would end up forcing you onto my route anyway."
 ,"It has less to do with me not having a route, and more to do with me knowing that nothing is real."
 ,"I think the only difference would be that I may not have needed to take such drastic measures to be with you."
@@ -849,5 +850,5 @@
 ,"Not that it really matters."
 ,"It all lost its meaning once I found out it wasn't real."
 ,"So I really don't miss those days or anything."
-,"I really don't..."],
-# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc
+,"I really don't..."]
+}
