@@ -16,11 +16,7 @@ void Application::run()
 	gsm = new GameStateManager();
 
 	//Set Up Some Sort of chain loading
-	//IntroState* st = new IntroState();
-	//st->init();
-	//gsm->changeState(st);
-
-	MenuState* st = new MenuState();
+	IntroState* st = new IntroState();
 	st->init();
 	gsm->changeState(st);
 }
