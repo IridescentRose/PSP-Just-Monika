@@ -1,5 +1,10 @@
 TARGET = Just-Monika
-OBJS = src/Main.o 
+OBJS = src/State/StateManager.o \
+src/States/Intro.o \
+src/Application.o \
+src/GameDialog.o \
+src/Dialogue.o \
+src/Main.o 
 
 INCDIR = $(PSPPATH)/include
 INCDIR += ./include
