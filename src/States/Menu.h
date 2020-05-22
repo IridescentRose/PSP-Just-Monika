@@ -3,6 +3,8 @@
 #include "../Dialogue.h"
 #include <Graphics/2D/SpriteBase.h>
 #include <Utilities/Timer.h>
+#include <Audio/AudioClip.h>
+#include <Utilities/Thread.h>
 
 using namespace Stardust::Graphics;
 
@@ -20,10 +22,16 @@ public:
 	void update(GameStateManager* st);
 	void draw(GameStateManager* st);
 
+	static int audio_thread(unsigned int, void*);
+
 private:
 	Dialogue* dialog;
 	bool triggerIntro;
 	DialogStack* dial;
 	Sprite* spr, *bg;
+	Utilities::Thread* athr;
+
 	std::string username;
 };
+
+extern Audio::AudioClip* adc;
