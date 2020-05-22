@@ -201,7 +201,7 @@ void MenuState::awaken()
 
 void MenuState::randomPick()
 {
-	int choice = rand() % 57;
+	int choice = rand() % 61;
 
 	for (int i = 0; i < messageRoot[std::to_string(choice)].size(); i++) {
 		Dialog* d = new Dialog();

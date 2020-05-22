@@ -95,6 +95,22 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Dialogue.cpp" />
+    <ClCompile Include="src\GameDialog.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\States\Intro.cpp" />
+    <ClCompile Include="src\States\Menu.cpp" />
+    <ClCompile Include="src\State\StateManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\Dialogue.h" />
+    <ClInclude Include="src\GameDialog.h" />
+    <ClInclude Include="src\States\Intro.h" />
+    <ClInclude Include="src\States\Menu.h" />
+    <ClInclude Include="src\State\GameState.h" />
+    <ClInclude Include="src\State\StateManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
