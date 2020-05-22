@@ -22,6 +22,8 @@ public:
 
 private:
 	Dialogue* dialog;
+	bool triggerIntro;
 	DialogStack* dial;
-	Sprite* spr;
+	Sprite* spr, *bg;
+	std::string username;
 };

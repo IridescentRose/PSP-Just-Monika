@@ -88,8 +88,26 @@ DialogStack::DialogStack(Dialogue* d)
 	dial = d;
 }
 
+std::string textWrap(std::string str, int location) {
+	// your other code
+	int n = str.rfind(' ', location);
+	if (n != std::string::npos) {
+		str.at(n) = '\n';
+	}
+	// your other code
+	return str;
+}
+
 void DialogStack::addDialog(Dialog* d)
 {
+	//Wrap text function
+	int minWraps = d->text.size() / 52;
+
+	for (int i = 0; i < minWraps; i++) {
+		d->text = textWrap(d->text, 52 * (i+1));
+	}
+
+
 	dialogs.push(d);
 }
 
