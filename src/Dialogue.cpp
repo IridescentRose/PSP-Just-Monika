@@ -88,6 +88,7 @@ DialogStack::DialogStack(Dialogue* d)
 	dial = d;
 }
 
+#include "States/Menu.h"
 std::string textWrap(std::string str, int location) {
 	// your other code
 	int n = str.rfind(' ', location);
@@ -100,6 +101,11 @@ std::string textWrap(std::string str, int location) {
 
 void DialogStack::addDialog(Dialog* d)
 {
+	size_t start_pos = d->text.find("[player]");
+	if (start_pos != std::string::npos) {
+		d->text.replace(start_pos, std::string("[player]").length(), username);
+	}
+	
 	//Wrap text function
 	int minWraps = d->text.size() / 52;
 

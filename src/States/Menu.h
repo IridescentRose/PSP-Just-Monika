@@ -24,14 +24,17 @@ public:
 
 	static int audio_thread(unsigned int, void*);
 
+	void awaken();
+
 private:
 	Dialogue* dialog;
 	bool triggerIntro;
 	DialogStack* dial;
+	int reloads;
 	Sprite* spr, *bg;
 	Utilities::Thread* athr;
 
-	std::string username;
 };
 
 extern Audio::AudioClip* adc;
+extern std::string username;

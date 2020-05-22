@@ -1,4 +1,5 @@
 {
-  "firstPlayed": false,
-  "username":  "Irid-kun"
-}
+	"firstPlayed" : false,
+	"numReload" : 1,
+	"username" : "Irid-kun"
+}}

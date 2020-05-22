@@ -6,6 +6,7 @@ MenuState::MenuState()
 {
 }
 Audio::AudioClip* adc;
+std::string username;
 
 void MenuState::init()
 {
@@ -19,6 +20,7 @@ void MenuState::init()
 	Json::Value v = Utilities::JSON::openJSON("info.json");
 	bool playThrough = v["firstPlayed"].asBool();
 	triggerIntro = false;
+	reloads = v["numReload"].asInt();
 
 	adc = NULL;
 	athr = new Utilities::Thread(audio_thread);
@@ -49,17 +51,20 @@ void MenuState::init()
 	}
 	else {
 		//TRIGGER RE-ENTRY
-		Dialog* d = new Dialog();
-		d->interactionType = INTERACTION_TYPE_NONE;
-		d->text = "Re-entry Sequence";
-		dial->addDialog(d);
+		awaken();
+		reloads++;
+		if (reloads > 5) {
+			reloads = 5;
+		}
 	}
 
 	Json::Value v2;
 	v2["firstPlayed"] = true;
+	v2["username"] = username;
+	v2["numReload"] = reloads;
 
-	std::ofstream f("firstplay.json");
-	//f << v2;
+	std::ofstream f("info.json", std::ios::in | std::ios::out);
+	f << v2;
 	f.close();
 
 }
@@ -147,6 +152,19 @@ int MenuState::audio_thread(unsigned int, void*)
 		sceKernelDelayThread(1000 * 1000); //One tick per second
 	}
 	return 0;
+}
+
+void MenuState::awaken()
+{
+	Json::Value v = Utilities::JSON::openJSON("./assets/script/awakening.json");
+	Utilities::app_Logger->log("REE");
+	for (int i = 0; i < v[std::to_string(reloads)].size(); i++) {
+		Dialog* d = new Dialog();
+		d->interactionType = INTERACTION_TYPE_NONE;
+		d->text = v[std::to_string(reloads)][i].asString();
+
+		dial->addDialog(d);
+	}
 }
 
 

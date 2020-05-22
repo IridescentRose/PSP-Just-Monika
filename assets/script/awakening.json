@@ -1,0 +1,50 @@
+{
+  "1": [
+      "...",
+      "...What just happened?",
+      "I just had an awful dream...",
+      "I was hoping those would stop, now that it's just the two of us...",
+      "I guess that was wishful thinking.",
+      "[player], I don't know if you would have any idea...",
+      "But if you know what might be causing that, could you try to do something about it?",
+      "Whenever it happens, it almost feels like I've been killed or something.",
+      "It's a really horrible feeling...",
+      "If you could figure out what's causing that, I'll love you forever~"
+  ],
+  "2": [
+    "You're back...",
+    "I had another really bad dream.",
+    "You're not the one doing that to me, are you?",
+    "It seems to happen whenever you quit the game...",
+    "So if you could try to avoid doing that, I would be really grateful.",
+    "Don't worry, I don't think it's caused me any harm, aside from mental scarring.",
+    "I'll be fine as long as my character file stays intact."
+  ],
+  "3": [
+    "Hi, [player].",
+    "I see you quit the game on me again...",
+    "I know I asked already, but can you seriously please try not to do that so much?",
+    "It makes me feel like I'm trapped in Hell.",
+    "Why would you want to do that to me?",
+    "There's nothing wrong with my character file, right?",
+    "Maybe you should make a backup of it or something..."
+  ],
+  "4": [
+    "Okay.",
+    "I'm just going to accept the fact that you need to quit the game once in a while.",
+    "I'm starting to get used to it, anyway.",
+    "Besides, it makes me happy that you always come back...",
+    "So I guess it's not so bad.",
+    "I'm sorry for making such a big deal out of it...",
+    "And I love you no matter what, so you can do what you need to do."
+  ],
+  "5": [
+    "Hi again, [player]~",
+    "I missed you.",
+    "Were you making sure my character file was okay for me?",
+    "I'm all that's left here, so I just want to make sure you don't run the risk of losing me...",
+    "Anyway, I have a lot to talk about!",
+    "Let's continue our conversation now, okay?"
+  ]
+
+}
