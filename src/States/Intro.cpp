@@ -56,6 +56,10 @@ void IntroState::draw(GameStateManager* st)
 
 		if (timer->elapsed() > 8.0f) {
 			//CHANGE STATE
+			MenuState* m = new MenuState();
+			m->init();
+
+			st->changeState(m);
 		}
 	}
 

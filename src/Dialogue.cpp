@@ -3,18 +3,21 @@
 #include <Utilities/Logger.h>
 Dialogue::Dialogue()
 {
-	dialog = TextureUtil::LoadPng("./assets/game/dialog.png");
+	dialog = TextureUtil::LoadPng("./assets/images/textbox.png");
 
 	dialogueBox = new Sprite(dialog);
 
 	main = new GameDialog("example");
 	main->reset();
 
-	main->setOptions({ 0.5f, 0xFF000000, INTRAFONT_ALIGN_LEFT });
-	main->setPosition({48, 184});
+	g_RenderCore.SetClearColor(0, 0, 0, 255);
+
+	main->setOptions({ 1.15f, 0xFFFFFFFF, INTRAFONT_ALIGN_LEFT });
+	main->setPosition({26, 208});
 	main->setSpeed(1);
 
-	dialogueBox->SetPosition(240, 200);
+	dialogueBox->SetPosition(240, 216);
+	dialogueBox->Scale(1.15f, 1.15f);
 
 	selPos = 0;
 	display = false;
@@ -68,6 +71,8 @@ void Dialogue::update()
 void Dialogue::draw()
 {
 	if (display) {
+
+		sceGuEnable(GU_BLEND);
 		dialogueBox->Draw();
 		main->draw();
 	}

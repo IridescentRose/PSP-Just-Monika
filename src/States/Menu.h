@@ -1,15 +1,14 @@
 #pragma once
 #include "../State/GameState.h"
-#include "../GameDialog.h"
+#include "../Dialogue.h"
 #include <Graphics/2D/SpriteBase.h>
 #include <Utilities/Timer.h>
-#include "Menu.h"
 
 using namespace Stardust::Graphics;
 
-class IntroState : public GameState {
+class MenuState : public GameState {
 public:
-	IntroState();
+	MenuState();
 
 	void init();
 	void cleanup();
@@ -22,9 +21,7 @@ public:
 	void draw(GameStateManager* st);
 
 private:
-	Stardust::Utilities::Timer* timer;
-	GameDialog* dialog;
-	Render2D::Sprite* logo;
-	Texture* tex;
-	int stage;
+	Dialogue* dialog;
+	DialogStack* dial;
+	Sprite* spr;
 };
