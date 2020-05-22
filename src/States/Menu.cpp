@@ -9,6 +9,7 @@ Audio::AudioClip* adc;
 std::string username;
 
 
+int stage = 0;
 Json::Value messageRoot;
 void MenuState::init()
 {
@@ -71,6 +72,9 @@ void MenuState::init()
 
 	timeTilNextMessage = 600;
 	speaking = true;
+
+	srand(time(0));
+	stage = rand() % 13;
 }
 
 void MenuState::cleanup()
@@ -80,7 +84,6 @@ void MenuState::cleanup()
 
 
 bool audioPlayFlag = false;
-int stage = rand() % 13;
 void MenuState::update(GameStateManager* st)
 {
 	dial->update();
