@@ -16,9 +16,16 @@ void MenuState::init()
 	dialog = new Dialogue();
 	dial = new DialogStack(dialog);
 	spr = new Sprite(TextureUtil::LoadPng("./assets/images/monika.png"));
-	bg = new Sprite(TextureUtil::LoadPng("./assets/images/room.png"));
+
+	bg1 = new Sprite(TextureUtil::LoadPng("./assets/images/rooms/evening.png"));
+	bg2 = new Sprite(TextureUtil::LoadPng("./assets/images/rooms/day.png"));
+	bg3 = new Sprite(TextureUtil::LoadPng("./assets/images/rooms/night.png"));
+
+	bg1->SetPosition(240, 136);
+	bg2->SetPosition(240, 136);
+	bg3->SetPosition(240, 136);
 	spr->SetPosition(240, 136);
-	bg->SetPosition(240, 136);
+	dayTime = 0;
 
 	Json::Value v = Utilities::JSON::openJSON("info.json");
 	bool playThrough = v["firstPlayed"].asBool();
@@ -86,6 +93,10 @@ void MenuState::cleanup()
 bool audioPlayFlag = false;
 void MenuState::update(GameStateManager* st)
 {
+	dayTime += 2;
+	if (dayTime >= 24000) {
+		dayTime = 0;
+	}
 	dial->update();
 
 	if (dialog->isEngaged() && triggerIntro) {
@@ -140,7 +151,44 @@ void MenuState::draw(GameStateManager* st)
 		spr->Draw();
 	}
 	else {
-		bg->Draw();
+
+		sceGuEnable(GU_BLEND);
+		if (dayTime >= 0 && dayTime < 3000) {
+			bg2->Alpha(255);
+			bg2->Draw();
+
+			bg1->Alpha(255 - 255 * ((float)dayTime / 3000.f));
+			bg1->Draw();
+		}
+		else if (dayTime >= 3000 && dayTime < 9000) {
+			bg2->Alpha(255);
+			bg2->Draw();
+		}
+		else if (dayTime >= 9000 && dayTime < 12000) {
+			bg1->Alpha(255);
+			bg1->Draw();
+
+			bg2->Alpha(255 - 255 * ((float)(dayTime-9000) / 3000.f));
+			bg2->Draw();
+		}
+		else if (dayTime >= 12000 && dayTime < 15000) {
+			bg3->Alpha(255);
+			bg3->Draw();
+
+			bg1->Alpha(255 - 255 * ((float)(dayTime-12000) / 3000.f));
+			bg1->Draw();
+		}
+		else if (dayTime >= 15000 && dayTime < 21000) {
+			bg3->Alpha(255);
+			bg3->Draw();
+		}
+		else if (dayTime >= 21000 && dayTime < 24000) {
+			bg1->Alpha(255);
+			bg1->Draw();
+
+			bg3->Alpha(255 - 255 * ((float)(dayTime - 21000) / 3000.f));
+			bg3->Draw();
+		}
 	}
 
 

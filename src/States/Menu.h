@@ -32,8 +32,10 @@ private:
 	bool triggerIntro;
 	DialogStack* dial;
 	int reloads;
-	Sprite* spr, *bg;
+	Sprite* spr, *bg1, *bg2, *bg3;
 	Utilities::Thread* athr;
+
+	int dayTime;
 
 	bool speaking;
 	int timeTilNextMessage;
