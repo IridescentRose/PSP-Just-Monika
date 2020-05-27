@@ -57,6 +57,9 @@ void Monika::LivingBackground::draw()
 	if (dayTime >= sunriseTime + 3600 && dayTime < sunsetTime - 3600) {
 		daySprite->Alpha(255);
 		daySprite->Draw();
+
+		tableSprite->Alpha(255);
+		tableSprite->Draw();
 	}
 	else if (dayTime >= sunsetTime - 3600 && dayTime < sunsetTime + 3600) {
 		daySprite->Alpha(255);
@@ -64,10 +67,19 @@ void Monika::LivingBackground::draw()
 
 		nightSprite->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600))/7200.0f));
 		nightSprite->Draw();
+
+		tableSprite->Alpha(255);
+		tableSprite->Draw();
+
+		tableSpriteN->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600)) / 7200.0f));
+		tableSpriteN->Draw();
 	}
 	else if (dayTime >= sunsetTime + 3600 || dayTime < sunriseTime - 3600) {
 		nightSprite->Alpha(255);
 		nightSprite->Draw();
+
+		tableSpriteN->Alpha(255);
+		tableSpriteN->Draw();
 	}
 	else if (dayTime >= sunriseTime - 3600 && dayTime < sunriseTime + 3600) {
 		nightSprite->Alpha(255);
@@ -75,10 +87,20 @@ void Monika::LivingBackground::draw()
 
 		daySprite->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
 		daySprite->Draw();
+
+		tableSpriteN->Alpha(255);
+		tableSpriteN->Draw();
+
+		tableSprite->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
+		tableSprite->Draw();
 	}
 	else {
 		daySprite->Alpha(255);
 		daySprite->Draw();
+
+
+		tableSprite->Alpha(255);
+		tableSprite->Draw();
 	}
 }
 
@@ -143,6 +165,13 @@ void Monika::LivingBackground::calculateWeatherDay()
 		rain = false;
 	}
 
+	tableSprite = new Sprite(TextureUtil::LoadPng("./assets/images/room/day/desk.png"));
+	tableSpriteN = new Sprite(TextureUtil::LoadPng("./assets/images/room/night/desk-n.png"));
+
 	daySprite->SetPosition(240, 136);
 	nightSprite->SetPosition(240, 136);
+
+
+	tableSprite->SetPosition(248, 272 - 64);
+	tableSpriteN->SetPosition(248, 272 - 64);
 }

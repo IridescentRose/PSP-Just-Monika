@@ -36,7 +36,8 @@ namespace Monika {
 		int dayTime;
 		uint8_t day;
 
-		Sprite* daySprite, *nightSprite;
+		Sprite* daySprite, * nightSprite;
+		Sprite* tableSprite, * tableSpriteN;
 
 	};
 }
