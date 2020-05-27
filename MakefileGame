@@ -5,6 +5,7 @@ src/Application.o \
 src/GameDialog.o \
 src/Dialogue.o \
 src/States/Menu.o \
+src/Monika/LivingBackground2.o \
 src/Main.o 
 
 INCDIR = $(PSPPATH)/include

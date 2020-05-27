@@ -12,25 +12,16 @@ std::string username;
 int stage = 0;
 Json::Value messageRoot;
 
-pspTime* pspTimeNow;
 
 void MenuState::init()
 {
-	pspTimeNow = new pspTime();
-	sceRtcGetCurrentClockLocalTime(pspTimeNow);
-	
+	livingBG = new Monika::LivingBackground();
 
 	dialog = new Dialogue();
 	dial = new DialogStack(dialog);
 	spr = new Sprite(TextureUtil::LoadPng("./assets/images/monika.png"));
 
-	bg1 = new Sprite(TextureUtil::LoadPng("./assets/images/rooms/evening.png"));
-	bg2 = new Sprite(TextureUtil::LoadPng("./assets/images/rooms/day.png"));
-	bg3 = new Sprite(TextureUtil::LoadPng("./assets/images/rooms/night.png"));
 
-	bg1->SetPosition(240, 136);
-	bg2->SetPosition(240, 136);
-	bg3->SetPosition(240, 136);
 	spr->SetPosition(240, 136);
 	dayTime = 0;
 
@@ -73,6 +64,10 @@ void MenuState::init()
 		if (reloads > 5) {
 			reloads = 5;
 		}
+		if (spr != NULL) {
+			delete spr;
+			spr = NULL;
+		}
 	}
 
 	Json::Value v2;
@@ -100,11 +95,9 @@ void MenuState::cleanup()
 bool audioPlayFlag = false;
 void MenuState::update(GameStateManager* st)
 {
-	sceRtcGetCurrentClockLocalTime(pspTimeNow);
-	dayTime += 20;
-	if (dayTime >= 24000) {
-		dayTime = 0;
-	}
+	livingBG->update();
+
+
 	dial->update();
 
 	if (dialog->isEngaged() && triggerIntro) {
@@ -159,44 +152,10 @@ void MenuState::draw(GameStateManager* st)
 		spr->Draw();
 	}
 	else {
-
 		sceGuEnable(GU_BLEND);
-		if (pspTimeNow->hour >= 6 && pspTimeNow->hour < 9) {
-			bg2->Alpha(255);
-			bg2->Draw();
+		livingBG->draw();
 
-			bg1->Alpha(255 - 255 * ( (((float)pspTimeNow->hour-6) * 60 + pspTimeNow->minutes) / 180.0f));
-			bg1->Draw();
-		}
-		else if (pspTimeNow->hour >= 9 && pspTimeNow->hour < 16) {
-			bg2->Alpha(255);
-			bg2->Draw();
-		}
-		else if (pspTimeNow->hour >= 16 && pspTimeNow->hour < 19) {
-			bg1->Alpha(255);
-			bg1->Draw();
 
-			bg2->Alpha(255 - 255 * ((((float)pspTimeNow->hour - 16) * 60 + pspTimeNow->minutes) / 180.0f));
-			bg2->Draw();
-		}
-		else if (pspTimeNow->hour >= 19 && pspTimeNow->hour < 21) {
-			bg3->Alpha(255);
-			bg3->Draw();
-
-			bg1->Alpha(255 - 255 * ((((float)pspTimeNow->hour - 19) * 60 + pspTimeNow->minutes) / 120.0f));
-			bg1->Draw();
-		}
-		else if ((pspTimeNow->hour >= 21 && pspTimeNow->hour < 24) || (pspTimeNow->hour >= 0 && pspTimeNow->hour < 4)) {
-			bg3->Alpha(255);
-			bg3->Draw();
-		}
-		else if (pspTimeNow->hour >= 4 && pspTimeNow->hour < 6) {
-			bg1->Alpha(255);
-			bg1->Draw();
-
-			bg3->Alpha(255 - 255 * ((((float)pspTimeNow->hour - 4) * 60 + pspTimeNow->minutes) / 120.0f));
-			bg3->Draw();
-		}
 	}
 
 

@@ -5,6 +5,7 @@
 #include <Utilities/Timer.h>
 #include <Audio/AudioClip.h>
 #include <Utilities/Thread.h>
+#include "../Monika/LivingBackground2.h"
 
 using namespace Stardust::Graphics;
 
@@ -32,7 +33,8 @@ private:
 	bool triggerIntro;
 	DialogStack* dial;
 	int reloads;
-	Sprite* spr, *bg1, *bg2, *bg3;
+	Monika::LivingBackground* livingBG;
+	Sprite* spr;
 	Utilities::Thread* athr;
 
 	int dayTime;
