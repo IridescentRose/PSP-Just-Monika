@@ -218,12 +218,12 @@ int MenuState::audio_thread(unsigned int, void*)
 			case 4: {numTicksLeft = 122; break; }
 			case 5: {numTicksLeft = 91; break; }
 			case 6: {numTicksLeft = 90; break; }
-			case 7: {numTicksLeft = 71; break; }
+			case 7: {numTicksLeft = 124; break; }
 			case 8: {numTicksLeft = 92; break; }
 			case 9: {numTicksLeft = 60; break; }
 			case 10: {numTicksLeft = 94; break; }
-			case 11: {numTicksLeft = 41; break; }
-			case 12: {numTicksLeft = 181; break; }
+			case 11: {numTicksLeft = 120; break; }
+			case 12: {numTicksLeft = 175; break; }
 			}
 
 
