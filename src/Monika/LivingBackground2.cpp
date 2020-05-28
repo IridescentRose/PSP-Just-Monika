@@ -29,6 +29,7 @@ Monika::LivingBackground::LivingBackground()
 }
 void Monika::LivingBackground::update()
 {
+	body->update();
 	sceRtcGetCurrentClockLocalTime(myCurrentTime);
 	if (myCurrentTime->day != day) {
 		calculateSunRiseSet();

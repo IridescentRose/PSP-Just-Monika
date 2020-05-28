@@ -39,6 +39,9 @@
     <ClCompile Include="src\Monika\LivingBackground2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Monika\BodyBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\State\GameState.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Monika\LivingBackground2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Monika\BodyBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "name": "crossed",
+      "required": [
+        "base",
+        "crossed"
+      ]
+    },
+    {
+      "name": "down",
+      "required": [
+        "base",
+        "down"
+      ]
+    },
+    {
+      "name": "point",
+      "required": [
+        "base",
+        "point"
+      ]
+    },
+    {
+      "name": "rest",
+      "required": [
+        "base",
+        "rest"
+      ]
+    },
+    {
+      "name": "steepling",
+      "required": [
+        "base",
+        "steepling"
+      ]
+    },
+    {
+      "name": "lean",
+      "required": [
+        "base2",
+        "lean"
+      ]
+    }
+  ]
+}

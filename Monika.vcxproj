@@ -99,6 +99,7 @@
     <ClCompile Include="src\Dialogue.cpp" />
     <ClCompile Include="src\GameDialog.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Monika\BodyBase.cpp" />
     <ClCompile Include="src\Monika\LivingBackground2.cpp" />
     <ClCompile Include="src\States\Intro.cpp" />
     <ClCompile Include="src\States\Menu.cpp" />
@@ -108,6 +109,7 @@
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Dialogue.h" />
     <ClInclude Include="src\GameDialog.h" />
+    <ClInclude Include="src\Monika\BodyBase.h" />
     <ClInclude Include="src\Monika\LivingBackground2.h" />
     <ClInclude Include="src\States\Intro.h" />
     <ClInclude Include="src\States\Menu.h" />

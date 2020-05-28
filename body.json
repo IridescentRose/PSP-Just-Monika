@@ -1,12 +1,75 @@
 {
-  "data":
-  [
+  "data": [
     {
-      "name": "base1",
+      "name": "base",
       "file": "./assets/images/monika/body/body.png",
       "position": {
         "x": 240,
-        "y": 136
+        "y": 146,
+        "z": 0
+      }
+    },
+    {
+      "name": "base2",
+      "file": "./assets/images/monika/body/body-lean.png",
+      "position": {
+        "x": 240,
+        "y": 146,
+        "z": 0
+      }
+    },
+    {
+      "name": "crossed",
+      "file": "./assets/images/monika/body/crossed.png",
+      "position": {
+        "x": 240,
+        "y": 154,
+        "z": 1
+      }
+    },
+    {
+      "name": "down",
+      "file": "./assets/images/monika/body/down.png",
+      "position": {
+        "x": 240,
+        "y": 154,
+        "z": 1
+      }
+    },
+    {
+      "name": "lean",
+      "file": "./assets/images/monika/body/lean.png",
+      "position": {
+        "x": 240,
+        "y": 154,
+        "z": 1
+      }
+    },
+    {
+      "name": "point",
+      "file": "./assets/images/monika/body/point-right.png",
+      "position": {
+        "x": 240,
+        "y": 154,
+        "z": 1
+      }
+    },
+    {
+      "name": "rest",
+      "file": "./assets/images/monika/body/rest.png",
+      "position": {
+        "x": 240,
+        "y": 154,
+        "z": 1
+      }
+    },
+    {
+      "name": "steepling",
+      "file": "./assets/images/monika/body/steepling.png",
+      "position": {
+        "x": 240,
+        "y": 154,
+        "z": 1
       }
     }
   ]
