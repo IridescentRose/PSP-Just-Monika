@@ -11,11 +11,11 @@ std::string username;
 
 int stage = 0;
 Json::Value messageRoot;
-
+#include <iostream>
 
 void MenuState::init()
 {
-	livingBG = new Monika::LivingBackground();
+	
 
 	dialog = new Dialogue();
 	dial = new DialogStack(dialog);
@@ -34,7 +34,6 @@ void MenuState::init()
 	athr = new Utilities::Thread(audio_thread);
 	athr->Start(0);
 	messageRoot = Utilities::JSON::openJSON("./assets/script/messages.json");
-
 	username = v["username"].asString();
 
 	if (!playThrough) {
@@ -84,6 +83,7 @@ void MenuState::init()
 
 	srand(time(0));
 	stage = rand() % 13;
+	livingBG = new Monika::LivingBackground();
 }
 
 void MenuState::cleanup()

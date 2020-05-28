@@ -1,5 +1,13 @@
 {
-  "base": {
-    "file": "./assets/images/monika/body"
-  }
+  "data":
+  [
+    {
+      "name": "base1",
+      "file": "./assets/images/monika/body/body.png",
+      "position": {
+        "x": 240,
+        "y": 136
+      }
+    }
+  ]
 }

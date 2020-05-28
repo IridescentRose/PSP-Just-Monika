@@ -1,5 +1,6 @@
 #pragma once
 #include <Graphics/2D/SpriteBase.h>
+#include <map>
 
 using namespace Stardust;
 using namespace Stardust::Graphics;
@@ -15,6 +16,6 @@ namespace Monika {
 		void update();
 
 	private:
-		std::vector<Sprite*> sprts;
+		std::map<std::string, Sprite*> sprts;
 	};
 }

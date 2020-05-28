@@ -1,7 +1,7 @@
 #include "LivingBackground2.h"
 #include <psprtc.h>
 #include <pspmath.h>
-
+#include <iostream>
 #include <Utilities/Logger.h>
 
 pspTime* myCurrentTime;
@@ -18,7 +18,7 @@ Monika::LivingBackground::LivingBackground()
 	rain_sound->SetLoop(true);
 	thunder1 = new Audio::AudioClip("./assets/music/storm/thunder.wav", false);
 	thunder2 = new Audio::AudioClip("./assets/music/storm/thunder_1.wav", false);
-	
+
 	//DETERMINE WEATHER PATTERNS
 	calculateWeatherDay();
 
@@ -54,12 +54,16 @@ void Monika::LivingBackground::draw()
 	int sunsetTime = (sunSet.hour * 3600 + sunSet.minutes * 60);
 	int sunriseTime = (sunRise.hour * 3600 + sunRise.minutes * 60);
 
-
+	Utilities::app_Logger->log(std::to_string(dayTime));
+	Utilities::app_Logger->log(std::to_string(sunsetTime));
+	Utilities::app_Logger->log(std::to_string(sunriseTime));
 
 	if (dayTime >= sunriseTime + 3600 && dayTime < sunsetTime - 3600) {
 		daySprite->Alpha(255);
 		daySprite->Draw();
 
+		body->draw();
+		
 		tableSprite->Alpha(255);
 		tableSprite->Draw();
 	}
@@ -70,6 +74,8 @@ void Monika::LivingBackground::draw()
 		nightSprite->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600))/7200.0f));
 		nightSprite->Draw();
 
+		body->draw();
+		
 		tableSprite->Alpha(255);
 		tableSprite->Draw();
 
@@ -80,6 +86,8 @@ void Monika::LivingBackground::draw()
 		nightSprite->Alpha(255);
 		nightSprite->Draw();
 
+		body->draw();
+		
 		tableSpriteN->Alpha(255);
 		tableSpriteN->Draw();
 	}
@@ -90,6 +98,8 @@ void Monika::LivingBackground::draw()
 		daySprite->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
 		daySprite->Draw();
 
+		body->draw();
+	
 		tableSpriteN->Alpha(255);
 		tableSpriteN->Draw();
 
@@ -100,10 +110,12 @@ void Monika::LivingBackground::draw()
 		daySprite->Alpha(255);
 		daySprite->Draw();
 
-
+		body->draw();
+		
 		tableSprite->Alpha(255);
 		tableSprite->Draw();
 	}
+
 }
 
 void Monika::LivingBackground::calculateSunRiseSet()
