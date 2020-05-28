@@ -184,7 +184,9 @@ void Monika::LivingBackground::calculateWeatherDay()
 	tableSpriteN = new Sprite(TextureUtil::LoadPng("./assets/images/room/night/desk-n.png"));
 
 	daySprite->SetPosition(240, 136);
+	daySprite->setLayer(-10);
 	nightSprite->SetPosition(240, 136);
+	daySprite->setLayer(-10);
 
 
 	tableSprite->SetPosition(248, 272 - 64);

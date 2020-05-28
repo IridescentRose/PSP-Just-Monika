@@ -19,5 +19,7 @@ namespace Monika {
 		std::map<std::string, Sprite*> sprts;
 		int filter;
 		std::vector<std::vector<std::string>> filters;
+
+		Sprite* hairF, * hairB, * leanHairF, * leanHairB;
 	};
 }
