@@ -120,5 +120,60 @@
         "z": 1
       }
     }
+  ],
+  "eyebrows": [
+    {
+      "name": "mid",
+      "file1": "./assets/images/monika/face/default/eyebrows/mid.png",
+      "file2": "./assets/images/monika/face/lean/eyebrows/mid.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "furrowed",
+      "file1": "./assets/images/monika/face/default/eyebrows/furrowed.png",
+      "file2": "./assets/images/monika/face/lean/eyebrows/furrowed.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+
+    {
+      "name": "knit",
+      "file1": "./assets/images/monika/face/default/eyebrows/knit.png",
+      "file2": "./assets/images/monika/face/lean/eyebrows/knit.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+
+    {
+      "name": "think",
+      "file1": "./assets/images/monika/face/default/eyebrows/think.png",
+      "file2": "./assets/images/monika/face/lean/eyebrows/think.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+
+    {
+      "name": "up",
+      "file1": "./assets/images/monika/face/default/eyebrows/up.png",
+      "file2": "./assets/images/monika/face/lean/eyebrows/up.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    }
   ]
 }
