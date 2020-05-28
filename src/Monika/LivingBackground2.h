@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <Graphics/2D/SpriteBase.h>
 #include <Audio/AudioClip.h>
+#include "BodyBase.h"
 using namespace Stardust::Graphics::Render2D;
 using namespace Stardust::Graphics;
 using namespace Stardust;
@@ -24,6 +25,8 @@ namespace Monika {
 	private:
 		void calculateSunRiseSet();
 		void calculateWeatherDay();
+
+		Body* body;
 
 		DayTime sunRise, sunSet;
 		bool newDay;

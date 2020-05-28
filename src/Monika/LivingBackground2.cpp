@@ -24,6 +24,8 @@ Monika::LivingBackground::LivingBackground()
 
 	//DETERMINE SUNRISE / SUNSET TIME
 	calculateSunRiseSet();
+
+	body = new Body();
 }
 void Monika::LivingBackground::update()
 {
