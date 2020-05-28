@@ -1,0 +1,124 @@
+{
+  "eyes": [
+    {
+      "name": "normal",
+      "file1": "./assets/images/monika/face/default/eyes/normal.png",
+      "file2": "./assets/images/monika/face/lean/eyes/normal.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "closed-sad",
+      "file1": "./assets/images/monika/face/default/eyes/closed-sad.png",
+      "file2": "./assets/images/monika/face/lean/eyes/closed-sad.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "closed-happy",
+      "file1": "./assets/images/monika/face/default/eyes/closed-happy.png",
+      "file2": "./assets/images/monika/face/lean/eyes/closed-happy.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "crazy",
+      "file1": "./assets/images/monika/face/default/eyes/crazy.png",
+      "file2": "./assets/images/monika/face/lean/eyes/crazy.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "left",
+      "file1": "./assets/images/monika/face/default/eyes/left.png",
+      "file2": "./assets/images/monika/face/lean/eyes/left.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "right",
+      "file1": "./assets/images/monika/face/default/eyes/right.png",
+      "file2": "./assets/images/monika/face/lean/eyes/right.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "smug",
+      "file1": "./assets/images/monika/face/default/eyes/smug.png",
+      "file2": "./assets/images/monika/face/lean/eyes/smug.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "soft",
+      "file1": "./assets/images/monika/face/default/eyes/soft.png",
+      "file2": "./assets/images/monika/face/lean/eyes/soft.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "sparkle",
+      "file1": "./assets/images/monika/face/default/eyes/sparkle.png",
+      "file2": "./assets/images/monika/face/lean/eyes/sparkle.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "wide",
+      "file1": "./assets/images/monika/face/default/eyes/wide.png",
+      "file2": "./assets/images/monika/face/lean/eyes/wide.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "wink-left",
+      "file1": "./assets/images/monika/face/default/eyes/wink-left.png",
+      "file2": "./assets/images/monika/face/lean/eyes/wink-left.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "wink-right",
+      "file1": "./assets/images/monika/face/default/eyes/wink-right.png",
+      "file2": "./assets/images/monika/face/lean/eyes/wink-right.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    }
+  ]
+}

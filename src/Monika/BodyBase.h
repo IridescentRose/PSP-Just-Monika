@@ -15,8 +15,10 @@ namespace Monika {
 		void draw();
 		void update();
 
+		std::string currentEyes;
 	private:
 		std::map<std::string, Sprite*> sprts;
+		std::map<std::string, Sprite*> eyes;
 		int filter;
 		std::vector<std::vector<std::string>> filters;
 

@@ -1,3 +1,4 @@
 {
-  "hair": 2 //0-2 default, down, down w/ strand
+  "hair": 2, //0-2 default, down, down w/ strand,
+  "eyes": "wink-right" // testing purposes only - does not effect the actual game.
 }

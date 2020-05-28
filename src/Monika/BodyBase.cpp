@@ -35,7 +35,8 @@ Monika::Body::Body()
 
 	v = Utilities::JSON::openJSON("./customize.json");
 	int hairChoice = v["hair"].asInt();
-	Utilities::app_Logger->log(std::to_string(hairChoice));
+
+	currentEyes = v["eyes"].asString();
 
 	if(hairChoice == 0){
 		hairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/default-f.png"));
@@ -90,6 +91,25 @@ Monika::Body::Body()
 		leanHairB->setLayer(0);
 	}
 
+
+	v = Utilities::JSON::openJSON("./assets/face.json")["eyes"];
+	for (int i = 0; i < v.size(); i++) {
+		std::string str = v[i]["name"].asString();
+
+		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
+		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr->setLayer(v[i]["position"]["z"].asInt());
+		spr->Scale(0.85f, 0.85f);
+
+		eyes.emplace(str, spr);
+
+		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
+		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr2->setLayer(v[i]["position"]["z"].asInt());
+		spr2->Scale(0.85f, 0.85f);
+
+		eyes.emplace(str + "-lean", spr2);
+	}
 }
 
 void Monika::Body::draw()
@@ -104,18 +124,30 @@ void Monika::Body::draw()
 	sceGuEnable(GU_ALPHA_TEST);
 	for (auto [str, s] : sprts) {
 		for (auto strs : filters[filter]) {
+
+
 			if (str == strs) {
 				s->Draw();
+			}
+
+			if (str == "base" || str == "base2") {
+				if (filter != 5) {
+					hairF->Draw();
+				}
+				else {
+					leanHairF->Draw();
+				}
 			}
 		}
 	}
 
 	if (filter != 5) {
-		hairF->Draw();
+		eyes[currentEyes]->Draw();
 	}
 	else {
-		leanHairF->Draw();
+		eyes[currentEyes + "-lean"]->Draw();
 	}
+
 }
 
 void Monika::Body::update()
