@@ -17,7 +17,8 @@ Dialogue::Dialogue()
 	main->setSpeed(2);
 
 	dialogueBox->SetPosition(240, 216);
-	dialogueBox->Scale(1.15f, 1.15f);
+	dialogueBox->Scale(1.1f, 1.1f);
+	dialogueBox->setLayer(29);
 
 	selPos = 0;
 	display = false;

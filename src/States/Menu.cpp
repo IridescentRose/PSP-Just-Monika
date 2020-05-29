@@ -58,7 +58,7 @@ void MenuState::init()
 	}
 	else {
 		//TRIGGER RE-ENTRY
-		//awaken();
+		awaken();
 		reloads++;
 		if (reloads > 5) {
 			reloads = 5;
@@ -124,7 +124,7 @@ void MenuState::update(GameStateManager* st)
 		timeTilNextMessage--;
 
 		if (timeTilNextMessage <= 0) {
-			//randomPick();
+			randomPick();
 			timeTilNextMessage = 400 + rand() % 1200;
 			speaking = true;
 		}
