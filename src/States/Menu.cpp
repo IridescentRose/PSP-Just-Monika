@@ -79,7 +79,7 @@ void MenuState::init()
 	f << v2;
 	f.close();
 
-	timeTilNextMessage = 600;
+	timeTilNextMessage = 300;
 	speaking = true;
 
 	srand(time(0));
@@ -130,7 +130,7 @@ void MenuState::update(GameStateManager* st)
 
 		if (timeTilNextMessage <= 0) {
 			randomPick();
-			timeTilNextMessage = 400 + rand() % 1200;
+			timeTilNextMessage = 300 + rand() % 900;
 			speaking = true;
 		}
 	}
