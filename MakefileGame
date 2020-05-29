@@ -7,11 +7,12 @@ src/Dialogue.o \
 src/States/Menu.o \
 src/Monika/LivingBackground2.o \
 src/Monika/BodyBase.o \
+src/RAM.o \
 src/Main.o 
 
 INCDIR = $(PSPPATH)/include
 INCDIR += ./include
-CFLAGS = -O3 -G0 -g3 -mpreferred-stack-boundary=4 -ffast-math -gdwarf-2 -DRAVEN_CLIENT_DEBUG
+CFLAGS = -O3 -G0 -g3 -mpreferred-stack-boundary=4 -ffast-math -gdwarf-2
 CXXFLAGS = $(CFLAGS) -std=gnu++17 -fno-rtti 
 ASFLAGS = $(CFLAGS)
 
@@ -21,7 +22,7 @@ PSP_LARGE_MEMORY = 1
 
 LIBDIR += ./lib
 LDFLAGS =
-LIBS= -lstardust -lpng -lpspaudiolib -lpspaudio -lpspaudiocodec -lintraFont -lz -ljson -lpspgum -lpspgu -lstdc++ -lpsprtc -lpspctrl -lm -lpspvfpu -lpspsdk -lpsppower -lpsphttp -lpspmath
+LIBS= -lstardust -lpng -lpspaudiolib -lpspaudio -lpspaudiocodec -lintraFont -lz -ljson -lpspgum -lpspgu -lstdc++ -lpsprtc -lpspctrl -lm -lpspvfpu -lpspsdk -lpsppower -lpsphttp -lpspmath -lperf
 
 EXTRA_TARGETS = EBOOT.PBP
 PSP_EBOOT_TITLE = Just Monika

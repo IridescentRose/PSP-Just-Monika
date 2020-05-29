@@ -3,6 +3,7 @@
 #include <pspmath.h>
 #include <iostream>
 #include <Utilities/Logger.h>
+#include "../RAM.h"
 
 pspTime* myCurrentTime;
 
@@ -25,7 +26,6 @@ Monika::LivingBackground::LivingBackground()
 	//DETERMINE SUNRISE / SUNSET TIME
 	calculateSunRiseSet();
 
-	body = new Body();
 	specialDay = false;
 	if (myCurrentTime->month == 10 && myCurrentTime->day == 31) {
 		//HALLOWEEN
@@ -48,6 +48,8 @@ Monika::LivingBackground::LivingBackground()
 		layer1->SetPosition(240, 112);
 		layer2->SetPosition(240, 112);
 	}
+
+	body = new Body();
 
 }
 void Monika::LivingBackground::update()

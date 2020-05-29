@@ -1,7 +1,13 @@
 {
-  "hair": 0, //0-2 default, down, down w/ strand,
+  "hair": 0, //0-2 default (0), down (1), down w/ strand (2),
   "outfit": "default", //blackdress, blazerless, default, marisa, miku, santa - Non standard is not implemented! (This includes dresses and lingerie)
   "pose": "steepling", //crossed, down, point, rest, steepling, lean
+  "ribbon": "white", //If not hair 1 or 2, it displays. Options: white, black, blue, dark-purple, emerald, gray, green, light-purple, peach, pink, platinum, red, ruby, sapphire, silver, teal, white, wine, yellow
+  
+  /*
+    These variables will not have an effect in later releases. It is strongly recommended you don't change them!
+  */
+  
   "blush": "lines", // testing purposes only - does not effect the actual game. - Well technically for this build it does...
   "tears": "none", // testing purposes only - does not effect the actual game. - Well technically for this build it does...
   "eyes": "normal", // testing purposes only - does not effect the actual game. - Well technically for this build it does...

@@ -1,0 +1,183 @@
+{
+  "ribbons": {
+    "white": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/white.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/white.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "black": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/black.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/black.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "blue": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/blue.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/blue.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "dark-purple": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/dark-purple.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/dark-purple.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "emerald": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/emerald.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/emerald.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "gray": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/gray.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/gray.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "green": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/green.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/green.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "light-purple": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/light-purple.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/light-purple.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "peach": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/peach.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/peach.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "pink": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/pink.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/pink.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "platinum": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/platinum.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/platinum.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "red": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/red.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/red.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "ruby": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/ruby.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/ruby.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "sapphire": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/sapphire.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/sapphire.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "silver": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/silver.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/silver.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "teal": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/teal.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/teal.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "wine": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/wine.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/wine.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    },
+
+    "yellow": {
+      "file1": "./assets/images/monika/accessories/ribbon/default/yellow.png",
+      "file2": "./assets/images/monika/accessories/ribbon/lean/yellow.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 0
+      }
+    }
+  }
+}

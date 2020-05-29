@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include <Utilities/Logger.h>
 #include <Utilities/JSON.h>
+#include <perflib.h>
 
 MenuState::MenuState()
 {
@@ -84,6 +85,10 @@ void MenuState::init()
 	srand(time(0));
 	stage = rand() % 13;
 	livingBG = new Monika::LivingBackground();
+	PFL_Init(false);
+	PFL_BeginCPURecord();
+
+	txt = new UI::UIText({12, 12}, "example");
 }
 
 void MenuState::cleanup()
@@ -148,6 +153,17 @@ void MenuState::update(GameStateManager* st)
 
 void MenuState::draw(GameStateManager* st)
 {
+	PFL_EndCPURecord();
+
+	float time = PFL_GetCPUTime();
+	float fps = 1000.0f / time;
+	int fpsI = fps;
+
+	txt->setContent(std::to_string(fpsI));
+
+	PFL_BeginCPURecord();
+
+
 	if (triggerIntro) {
 		spr->Draw();
 	}
@@ -158,8 +174,8 @@ void MenuState::draw(GameStateManager* st)
 
 	}
 
-
 	dialog->draw();
+	txt->draw();
 }
 
 int MenuState::audio_thread(unsigned int, void*)

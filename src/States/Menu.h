@@ -36,7 +36,7 @@ private:
 	Monika::LivingBackground* livingBG;
 	Sprite* spr;
 	Utilities::Thread* athr;
-
+	UI::UIText* txt;
 	int dayTime;
 
 	bool speaking;

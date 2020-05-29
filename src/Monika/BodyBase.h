@@ -30,10 +30,12 @@ namespace Monika {
 		std::map<std::string, Sprite*> blushes;
 		std::map<std::string, Sprite*> tears;
 
+		bool ignoreRibbon;
 
 		int filter;
 		std::vector<std::vector<std::string>> filters;
 
 		Sprite* hairF, * hairB, * leanHairF, * leanHairB;
+		Sprite* ribbon, *ribbonL;
 	};
 }

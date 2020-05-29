@@ -3,6 +3,7 @@
 #include <Utilities/Logger.h>
 #include <Utilities/Input.h>
 #include <iostream>
+#include "../RAM.h"
 
 Monika::Body::Body()
 {
@@ -43,6 +44,8 @@ Monika::Body::Body()
 	currentBlush = v["blush"].asString();
 	currentTears = v["tears"].asString();
 
+	std::string rib = v["ribbon"].asString();
+
 	std::string poseParse = v["pose"].asString();
 	if (poseParse == "crossed") { filter = 0; }
 	if (poseParse == "down") { filter = 1; }
@@ -69,6 +72,7 @@ Monika::Body::Body()
 		sprtsc.emplace(str, spr);
 	}
 
+	ignoreRibbon = true;
 	if(hairChoice == 0){
 		hairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/default-f.png"));
 		hairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/default-b.png"));
@@ -86,6 +90,7 @@ Monika::Body::Body()
 		leanHairF->setLayer(1);
 		leanHairB->SetPosition(264, 164);
 		leanHairB->setLayer(0);
+		ignoreRibbon = false;
 	}else if(hairChoice == 1){
 		hairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/down-f.png"));
 		hairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/down-b.png"));
@@ -122,6 +127,8 @@ Monika::Body::Body()
 		leanHairB->setLayer(0);
 	}
 
+
+	
 
 	v = Utilities::JSON::openJSON("./assets/face.json")["eyes"];
 	for (int i = 0; i < v.size(); i++) {
@@ -219,6 +226,32 @@ Monika::Body::Body()
 
 		tears.emplace(str + "-lean", spr2);
 	}
+
+	ribbon = NULL;
+	ribbonL = NULL;
+
+	if (!ignoreRibbon) {
+		v = Utilities::JSON::openJSON("./assets/accessories.json")["ribbons"][rib];
+		Utilities::app_Logger->log("LOADING RIBBON");
+
+		u32 ramA = freeMemory();
+		Utilities::app_Logger->log(std::to_string((float)ramA / 1024.f / 1024.f) + "MB");
+
+
+		ribbon = new Sprite(TextureUtil::LoadPng(v["file1"].asString()));
+		ribbon->setLayer(v["position"]["z"].asInt());
+		ribbon->SetPosition(v["position"]["x"].asInt(), v["position"]["y"].asInt());
+		ribbon->Scale(0.85f, 0.85f);
+
+
+
+		ribbonL = new Sprite(TextureUtil::LoadPng(v["file2"].asString()));
+		ribbonL->setLayer(v["position"]["z"].asInt());
+		ribbonL->SetPosition(v["position"]["x"].asInt(), v["position"]["y"].asInt());
+		ribbonL->Scale(0.85f, 0.85f);
+
+	}
+
 }
 
 void Monika::Body::draw()
@@ -240,16 +273,28 @@ void Monika::Body::draw()
 			if (str == strs) {
 				s->Draw();
 				sprtsc[str]->Draw();
+				if (strs == "base" || strs == "base2") {
+					if (!ignoreRibbon) {
+						if (filter != 5) {
+							if (ribbon != NULL)
+								ribbon->Draw();
+						}
+						else {
+							if (ribbonL != NULL)
+								ribbonL->Draw();
+						}
+					}
+
+					if (filter != 5) {
+						hairF->Draw();
+					}
+					else {
+						leanHairF->Draw();
+					}
+				}
 			}
 
-			if (str == "base" || str == "base2") {
-				if (filter != 5) {
-					hairF->Draw();
-				}
-				else {
-					leanHairF->Draw();
-				}
-			}
+			
 		}
 	}
 
