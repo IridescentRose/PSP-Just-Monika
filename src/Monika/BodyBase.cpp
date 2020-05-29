@@ -19,6 +19,8 @@ Monika::Body::Body()
 		spr->Scale(0.9f, 0.9f);
 		sprts.emplace(str, spr);
 	}
+
+
 	v = Utilities::JSON::openJSON("./assets/poses.json")["data"];
 
 	for (int i = 0; i < v.size(); i++) {
@@ -35,10 +37,38 @@ Monika::Body::Body()
 
 	v = Utilities::JSON::openJSON("./customize.json");
 	int hairChoice = v["hair"].asInt();
-
+	std::string clothingChoice = v["outfit"].asString();
 	currentEyes = v["eyes"].asString();
 	currentEyebrows = v["eyebrows"].asString();
 	currentMouth = v["mouth"].asString();
+
+	std::string poseParse = v["pose"].asString();
+	if (poseParse == "crossed") { filter = 0; }
+	if (poseParse == "down") { filter = 1; }
+	if (poseParse == "point") { filter = 2; }
+	if (poseParse == "rest") { filter = 3; }
+	if (poseParse == "steepling") { filter = 4; }
+	if (poseParse == "lean") { filter = 5; }
+
+
+	v = Utilities::JSON::openJSON("./assets/outfits.json")["data"];
+	for (int i = 0; i < v.size(); i++) {
+		std::string str = v[i]["name"].asString();
+
+		std::string filename = v[i]["file"].asString();
+		size_t start_pos = filename.find("[name]");
+		if (start_pos != std::string::npos) {
+			filename.replace(start_pos, std::string("[name]").length(), clothingChoice);
+		}
+
+		Utilities::app_Logger->log(filename);
+
+		Sprite* spr = new Sprite(TextureUtil::LoadPng(filename));
+		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr->setLayer(v[i]["position"]["z"].asInt());
+		spr->Scale(0.9f, 0.9f);
+		sprtsc.emplace(str, spr);
+	}
 
 	if(hairChoice == 0){
 		hairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/default-f.png"));
@@ -161,13 +191,16 @@ void Monika::Body::draw()
 		leanHairB->Draw();
 	}
 
+	sceGuAlphaFunc(GU_GEQUAL, 64, 0xFFFFFFFF);
 	sceGuEnable(GU_ALPHA_TEST);
+	sceGuEnable(GU_BLEND);
 	for (auto [str, s] : sprts) {
 		for (auto strs : filters[filter]) {
 
 
 			if (str == strs) {
 				s->Draw();
+				sprtsc[str]->Draw();
 			}
 
 			if (str == "base" || str == "base2") {
@@ -206,16 +239,5 @@ void Monika::Body::draw()
 
 void Monika::Body::update()
 {
-	if (Utilities::KeyPressed(PSP_CTRL_LEFT)) {
-		filter--;
-		if (filter < 0) {
-			filter = 0;
-		}
-	}
-	if (Utilities::KeyPressed(PSP_CTRL_RIGHT)) {
-		filter++;
-		if (filter > filters.size() - 1) {
-			filter = filters.size() - 1;
-		}
-	}
+	
 }

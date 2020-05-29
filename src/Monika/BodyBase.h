@@ -21,6 +21,7 @@ namespace Monika {
 
 	private:
 		std::map<std::string, Sprite*> sprts;
+		std::map<std::string, Sprite*> sprtsc;
 		std::map<std::string, Sprite*> eyes;
 		std::map<std::string, Sprite*> eyebrows;
 		std::map<std::string, Sprite*> mouths;
