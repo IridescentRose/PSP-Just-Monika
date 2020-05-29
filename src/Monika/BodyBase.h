@@ -17,10 +17,13 @@ namespace Monika {
 
 		std::string currentEyes;
 		std::string currentEyebrows;
+		std::string currentMouth;
+
 	private:
 		std::map<std::string, Sprite*> sprts;
 		std::map<std::string, Sprite*> eyes;
 		std::map<std::string, Sprite*> eyebrows;
+		std::map<std::string, Sprite*> mouths;
 
 		int filter;
 		std::vector<std::vector<std::string>> filters;

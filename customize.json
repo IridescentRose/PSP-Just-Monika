@@ -1,5 +1,6 @@
 {
-  "hair": 2, //0-2 default, down, down w/ strand,
+  "hair": 0, //0-2 default, down, down w/ strand,
   "eyes": "normal", // testing purposes only - does not effect the actual game.
-  "eyebrows": "mid" // testing purposes only - does not effect the actual game.
+  "eyebrows": "mid", // testing purposes only - does not effect the actual game.
+  "mouth": "smile" // testing purposes only - does not effect the actual game.
 }

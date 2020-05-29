@@ -38,6 +38,7 @@ Monika::Body::Body()
 
 	currentEyes = v["eyes"].asString();
 	currentEyebrows = v["eyebrows"].asString();
+	currentMouth = v["mouth"].asString();
 
 	if(hairChoice == 0){
 		hairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/default-f.png"));
@@ -115,20 +116,39 @@ Monika::Body::Body()
 	v = Utilities::JSON::openJSON("./assets/face.json")["eyebrows"];
 	for (int i = 0; i < v.size(); i++) {
 		std::string str = v[i]["name"].asString();
-	
+
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr->setLayer(v[i]["position"]["z"].asInt());
 		spr->Scale(0.85f, 0.85f);
-	
+
 		eyebrows.emplace(str, spr);
-	
+
 		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
 		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr2->setLayer(v[i]["position"]["z"].asInt());
 		spr2->Scale(0.85f, 0.85f);
-	
+
 		eyebrows.emplace(str + "-lean", spr2);
+	}
+
+	v = Utilities::JSON::openJSON("./assets/face.json")["mouths"];
+	for (int i = 0; i < v.size(); i++) {
+		std::string str = v[i]["name"].asString();
+
+		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
+		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr->setLayer(v[i]["position"]["z"].asInt());
+		spr->Scale(0.85f, 0.85f);
+
+		mouths.emplace(str, spr);
+
+		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
+		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr2->setLayer(v[i]["position"]["z"].asInt());
+		spr2->Scale(0.85f, 0.85f);
+
+		mouths.emplace(str + "-lean", spr2);
 	}
 }
 
@@ -173,6 +193,13 @@ void Monika::Body::draw()
 	}
 	else {
 		eyebrows[currentEyebrows + "-lean"]->Draw();
+	}
+
+	if (filter != 5) {
+		mouths[currentMouth]->Draw();
+	}
+	else {
+		mouths[currentMouth + "-lean"]->Draw();
 	}
 
 }

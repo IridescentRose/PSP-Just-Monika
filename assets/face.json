@@ -175,5 +175,108 @@
         "z": 1
       }
     }
+  ],
+
+  "mouths": [
+    {
+      "name": "smile",
+      "file1": "./assets/images/monika/face/default/mouth/smile.png",
+      "file2": "./assets/images/monika/face/lean/mouth/smile.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "angry",
+      "file1": "./assets/images/monika/face/default/mouth/angry.png",
+      "file2": "./assets/images/monika/face/lean/mouth/angry.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "big",
+      "file1": "./assets/images/monika/face/default/mouth/big.png",
+      "file2": "./assets/images/monika/face/lean/mouth/big.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "gasp",
+      "file1": "./assets/images/monika/face/default/mouth/angry.png",
+      "file2": "./assets/images/monika/face/lean/mouth/angry.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "pout",
+      "file1": "./assets/images/monika/face/default/mouth/pout.png",
+      "file2": "./assets/images/monika/face/lean/mouth/pout.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "small",
+      "file1": "./assets/images/monika/face/default/mouth/small.png",
+      "file2": "./assets/images/monika/face/lean/mouth/small.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "smirk",
+      "file1": "./assets/images/monika/face/default/mouth/smirk.png",
+      "file2": "./assets/images/monika/face/lean/mouth/smirk.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "smug",
+      "file1": "./assets/images/monika/face/default/mouth/smug.png",
+      "file2": "./assets/images/monika/face/lean/mouth/smug.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "triangle",
+      "file1": "./assets/images/monika/face/default/mouth/triangle.png",
+      "file2": "./assets/images/monika/face/lean/mouth/triangle.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "wide",
+      "file1": "./assets/images/monika/face/default/mouth/wide.png",
+      "file2": "./assets/images/monika/face/lean/mouth/wide.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    }
   ]
 }
