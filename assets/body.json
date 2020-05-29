@@ -47,7 +47,7 @@
     },
     {
       "name": "point",
-      "file": "./assets/images/monika/body/point-right.png",
+      "file": "./assets/images/monika/body/point.png",
       "position": {
         "x": 240,
         "y": 154,
