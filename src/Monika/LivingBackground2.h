@@ -41,6 +41,8 @@ namespace Monika {
 
 		Sprite* daySprite, * nightSprite;
 		Sprite* tableSprite, * tableSpriteN;
+		Sprite* layer1, *layer2;
+		bool specialDay;
 
 	};
 }

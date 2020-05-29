@@ -26,6 +26,29 @@ Monika::LivingBackground::LivingBackground()
 	calculateSunRiseSet();
 
 	body = new Body();
+	specialDay = false;
+	if (myCurrentTime->month == 10 && myCurrentTime->day == 31) {
+		//HALLOWEEN
+		specialDay = true;
+
+		layer1 = new Sprite(TextureUtil::LoadPng("./assets/images/room/o31/halloween_deco.png"));
+		layer2 = new Sprite(TextureUtil::LoadPng("./assets/images/room/o31/halloween_deco-n.png"));
+
+		layer1->SetPosition(240, 112);
+		layer2->SetPosition(240, 112);
+	}
+
+	if (myCurrentTime->month == 12 && myCurrentTime->day == 25) {
+		//CHRISTMAS
+		specialDay = true;
+
+		layer1 = new Sprite(TextureUtil::LoadPng("./assets/images/room/d25/bgdeco.png"));
+		layer2 = new Sprite(TextureUtil::LoadPng("./assets/images/room/d25/bgdeco-n.png"));
+
+		layer1->SetPosition(240, 112);
+		layer2->SetPosition(240, 112);
+	}
+
 }
 void Monika::LivingBackground::update()
 {
@@ -55,9 +78,16 @@ void Monika::LivingBackground::draw()
 	int sunsetTime = (sunSet.hour * 3600 + sunSet.minutes * 60);
 	int sunriseTime = (sunRise.hour * 3600 + sunRise.minutes * 60);
 
+	sceGuEnable(GU_BLEND);
+	sceGuDisable(GU_ALPHA_TEST);
 	if (dayTime >= sunriseTime + 3600 && dayTime < sunsetTime - 3600) {
 		daySprite->Alpha(255);
 		daySprite->Draw();
+
+		if (specialDay) {
+			layer1->Alpha(255);
+			layer1->Draw();
+		}
 
 		body->draw();
 		
@@ -71,6 +101,14 @@ void Monika::LivingBackground::draw()
 		nightSprite->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600))/7200.0f));
 		nightSprite->Draw();
 
+		if (specialDay) {
+			layer1->Alpha(255);
+			layer1->Draw();
+
+			layer2->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600)) / 7200.0f));
+			layer2->Draw();
+		}
+
 		body->draw();
 		
 		tableSprite->Alpha(255);
@@ -82,6 +120,11 @@ void Monika::LivingBackground::draw()
 	else if (dayTime >= sunsetTime + 3600 || dayTime < sunriseTime - 3600) {
 		nightSprite->Alpha(255);
 		nightSprite->Draw();
+		
+		if (specialDay) {
+			layer2->Alpha(255);
+			layer2->Draw();
+		}
 
 		body->draw();
 		
@@ -91,6 +134,14 @@ void Monika::LivingBackground::draw()
 	else if (dayTime >= sunriseTime - 3600 && dayTime < sunriseTime + 3600) {
 		nightSprite->Alpha(255);
 		nightSprite->Draw();
+
+		if (specialDay) {
+			layer2->Alpha(255);
+			layer2->Draw();
+
+			layer1->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
+			layer1->Draw();
+		}
 
 		daySprite->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
 		daySprite->Draw();
@@ -106,6 +157,11 @@ void Monika::LivingBackground::draw()
 	else {
 		daySprite->Alpha(255);
 		daySprite->Draw();
+
+		if (specialDay) {
+			layer1->Alpha(255);
+			layer1->Draw();
+		}
 
 		body->draw();
 		
