@@ -16,7 +16,7 @@ Monika::Body::Body()
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file"].asString()));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr->setLayer(v[i]["position"]["z"].asInt());
-		spr->Scale(0.9f, 0.9f);
+		spr->Scale(1.8f, 1.8f);
 		sprts.emplace(str, spr);
 	}
 
@@ -68,7 +68,7 @@ Monika::Body::Body()
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(filename));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr->setLayer(v[i]["position"]["z"].asInt());
-		spr->Scale(0.9f, 0.9f);
+		spr->Scale(0.9f * 2.0f, 0.9f * 2.0f);
 		sprtsc.emplace(str, spr);
 	}
 
@@ -78,10 +78,10 @@ Monika::Body::Body()
 		hairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/default-b.png"));
 		leanHairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/lean/default-f.png"));
 		leanHairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/lean/default-b.png"));
-		hairF->Scale(0.9f, 0.9f);
-		hairB->Scale(0.9f, 0.9f);
-		leanHairF->Scale(0.9f, 0.9f);
-		leanHairB->Scale(0.9f, 0.9f);
+		hairF->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		hairB->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		leanHairF->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		leanHairB->Scale(0.9f * 2.0f, 0.9f * 2.0f);
 		hairF->SetPosition(240, 96);
 		hairF->setLayer(1);
 		hairB->SetPosition(280, 128);
@@ -96,10 +96,10 @@ Monika::Body::Body()
 		hairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/down-b.png"));
 		leanHairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/lean/down-f.png"));
 		leanHairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/lean/down-b.png"));
-		hairF->Scale(0.9f, 0.9f);
-		hairB->Scale(0.9f, 0.9f);
-		leanHairF->Scale(0.9f, 0.9f);
-		leanHairB->Scale(0.9f, 0.9f);
+		hairF->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		hairB->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		leanHairF->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		leanHairB->Scale(0.9f * 2.0f, 0.9f * 2.0f);
 		hairF->SetPosition(240, 96);
 		hairF->setLayer(1);
 		hairB->SetPosition(240, 124);
@@ -113,10 +113,10 @@ Monika::Body::Body()
 		hairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/default/strand-b.png"));
 		leanHairF = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/lean/strand-f.png"));
 		leanHairB = new Sprite(TextureUtil::LoadPng("./assets/images/monika/hair/lean/strand-b.png"));
-		hairF->Scale(0.9f, 0.9f);
-		hairB->Scale(0.9f, 0.9f);
-		leanHairF->Scale(0.9f, 0.9f);
-		leanHairB->Scale(0.9f, 0.9f);
+		hairF->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		hairB->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		leanHairF->Scale(0.9f * 2.0f, 0.9f * 2.0f);
+		leanHairB->Scale(0.9f * 2.0f, 0.9f * 2.0f);
 		hairF->SetPosition(240, 96);
 		hairF->setLayer(1);
 		hairB->SetPosition(240, 124);
@@ -137,14 +137,14 @@ Monika::Body::Body()
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr->setLayer(v[i]["position"]["z"].asInt());
-		spr->Scale(0.85f, 0.85f);
+		spr->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 		eyes.emplace(str, spr);
 
 		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
 		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr2->setLayer(v[i]["position"]["z"].asInt());
-		spr2->Scale(0.85f, 0.85f);
+		spr2->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 		eyes.emplace(str + "-lean", spr2);
 	}
@@ -156,14 +156,14 @@ Monika::Body::Body()
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr->setLayer(v[i]["position"]["z"].asInt());
-		spr->Scale(0.85f, 0.85f);
+		spr->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 		eyebrows.emplace(str, spr);
 
 		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
 		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr2->setLayer(v[i]["position"]["z"].asInt());
-		spr2->Scale(0.85f, 0.85f);
+		spr2->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 		eyebrows.emplace(str + "-lean", spr2);
 	}
@@ -175,14 +175,14 @@ Monika::Body::Body()
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr->setLayer(v[i]["position"]["z"].asInt());
-		spr->Scale(0.85f, 0.85f);
+		spr->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 		mouths.emplace(str, spr);
 
 		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
 		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr2->setLayer(v[i]["position"]["z"].asInt());
-		spr2->Scale(0.85f, 0.85f);
+		spr2->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 		mouths.emplace(str + "-lean", spr2);
 	}
@@ -196,14 +196,14 @@ Monika::Body::Body()
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr->setLayer(v[i]["position"]["z"].asInt());
-		spr->Scale(0.8f, 0.8f);
+		spr->Scale(0.8f * 2.0f, 0.8f * 2.0f);
 
 		blushes.emplace(str, spr);
 
 		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
 		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
 		spr2->setLayer(v[i]["position"]["z"].asInt());
-		spr2->Scale(0.8f, 0.8f);
+		spr2->Scale(0.8f * 2.0f, 0.8f * 2.0f);
 
 		blushes.emplace(str + "-lean", spr2);
 	}
@@ -232,35 +232,34 @@ Monika::Body::Body()
 
 	if (!ignoreRibbon) {
 		v = Utilities::JSON::openJSON("./assets/accessories.json")["ribbons"][rib];
-		Utilities::app_Logger->log("LOADING RIBBON");
 
-		u32 ramA = freeMemory();
-		Utilities::app_Logger->log(std::to_string((float)ramA / 1024.f / 1024.f) + "MB");
 
 
 		ribbon = new Sprite(TextureUtil::LoadPng(v["file1"].asString()));
 		ribbon->setLayer(v["position"]["z"].asInt());
 		ribbon->SetPosition(v["position"]["x"].asInt(), v["position"]["y"].asInt());
-		ribbon->Scale(0.85f, 0.85f);
+		ribbon->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 
 
 		ribbonL = new Sprite(TextureUtil::LoadPng(v["file2"].asString()));
 		ribbonL->setLayer(v["position"]["z"].asInt());
 		ribbonL->SetPosition(v["position"]["x"].asInt(), v["position"]["y"].asInt());
-		ribbonL->Scale(0.85f, 0.85f);
+		ribbonL->Scale(0.85f * 2.0f, 0.85f * 2.0f);
 
 	}
 
+	u32 ramA = freeMemory();
+	Utilities::app_Logger->log(std::to_string((float)ramA / 1024.f / 1024.f) + "MB");
 }
 
 void Monika::Body::draw()
 {
 	if (filter != 5) {
-		hairB->Draw();
+		hairB->Draw(true);
 	}
 	else {
-		leanHairB->Draw();
+		leanHairB->Draw(true);
 	}
 
 	sceGuAlphaFunc(GU_GEQUAL, 64, 0xFFFFFFFF);
@@ -271,25 +270,25 @@ void Monika::Body::draw()
 
 
 			if (str == strs) {
-				s->Draw();
-				sprtsc[str]->Draw();
+				s->Draw(true);
+				sprtsc[str]->Draw(true);
 				if (strs == "base" || strs == "base2") {
 					if (!ignoreRibbon) {
 						if (filter != 5) {
 							if (ribbon != NULL)
-								ribbon->Draw();
+								ribbon->Draw(true);
 						}
 						else {
 							if (ribbonL != NULL)
-								ribbonL->Draw();
+								ribbonL->Draw(true);
 						}
 					}
 
 					if (filter != 5) {
-						hairF->Draw();
+						hairF->Draw(true);
 					}
 					else {
-						leanHairF->Draw();
+						leanHairF->Draw(true);
 					}
 				}
 			}
@@ -299,41 +298,41 @@ void Monika::Body::draw()
 	}
 
 	if (filter != 5) {
-		eyes[currentEyes]->Draw();
+		eyes[currentEyes]->Draw(true);
 	}
 	else {
-		eyes[currentEyes + "-lean"]->Draw();
+		eyes[currentEyes + "-lean"]->Draw(true);
 	}
 	
 	if (filter != 5) {
-		eyebrows[currentEyebrows]->Draw();
+		eyebrows[currentEyebrows]->Draw(true);
 	}
 	else {
-		eyebrows[currentEyebrows + "-lean"]->Draw();
+		eyebrows[currentEyebrows + "-lean"]->Draw(true);
 	}
 
 	if (filter != 5) {
-		mouths[currentMouth]->Draw();
+		mouths[currentMouth]->Draw(true);
 	}
 	else {
-		mouths[currentMouth + "-lean"]->Draw();
+		mouths[currentMouth + "-lean"]->Draw(true);
 	}
 
 	if (currentBlush != "none") {
 		if (filter != 5) {
-			blushes[currentBlush]->Draw();
+			blushes[currentBlush]->Draw(true);
 		}
 		else {
-			blushes[currentBlush + "-lean"]->Draw();
+			blushes[currentBlush + "-lean"]->Draw(true);
 		}
 	}
 
 	if (currentTears != "none") {
 		if (filter != 5) {
-			tears[currentTears]->Draw();
+			tears[currentTears]->Draw(true);
 		}
 		else {
-			tears[currentTears + "-lean"]->Draw();
+			tears[currentTears + "-lean"]->Draw(true);
 		}
 	}
 

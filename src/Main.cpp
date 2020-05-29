@@ -11,8 +11,12 @@ using namespace Stardust;
 using namespace Stardust::Utilities;
 using namespace Stardust::Graphics;
 
+#include <oslib/oslib.h>
+
 int main() {
 	Platform::initPlatform("DDLC_DEMO");
+	oslInitAudioME(oslInitAudioME_formats::OSL_FMT_ALL);
+
 
 	Application* app = new Application();
 	app->run();
