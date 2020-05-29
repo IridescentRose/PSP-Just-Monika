@@ -7,7 +7,6 @@
 Monika::Body::Body()
 {
 	filter = 0;
-	Utilities::app_Logger->log("A");
 	Json::Value v = Utilities::JSON::openJSON("./assets/body.json")["data"];
 
 	for (int i = 0; i < v.size(); i++) {
@@ -41,6 +40,8 @@ Monika::Body::Body()
 	currentEyes = v["eyes"].asString();
 	currentEyebrows = v["eyebrows"].asString();
 	currentMouth = v["mouth"].asString();
+	currentBlush = v["blush"].asString();
+	currentTears = v["tears"].asString();
 
 	std::string poseParse = v["pose"].asString();
 	if (poseParse == "crossed") { filter = 0; }
@@ -60,8 +61,6 @@ Monika::Body::Body()
 		if (start_pos != std::string::npos) {
 			filename.replace(start_pos, std::string("[name]").length(), clothingChoice);
 		}
-
-		Utilities::app_Logger->log(filename);
 
 		Sprite* spr = new Sprite(TextureUtil::LoadPng(filename));
 		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
@@ -180,6 +179,46 @@ Monika::Body::Body()
 
 		mouths.emplace(str + "-lean", spr2);
 	}
+
+
+	v = Utilities::JSON::openJSON("./assets/face.json")["blushes"];
+	for (int i = 0; i < v.size(); i++) {
+		std::string str = v[i]["name"].asString();
+
+
+		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
+		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr->setLayer(v[i]["position"]["z"].asInt());
+		spr->Scale(0.8f, 0.8f);
+
+		blushes.emplace(str, spr);
+
+		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
+		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr2->setLayer(v[i]["position"]["z"].asInt());
+		spr2->Scale(0.8f, 0.8f);
+
+		blushes.emplace(str + "-lean", spr2);
+	}
+
+	v = Utilities::JSON::openJSON("./assets/face.json")["tears"];
+	for (int i = 0; i < v.size(); i++) {
+		std::string str = v[i]["name"].asString();
+
+		Sprite* spr = new Sprite(TextureUtil::LoadPng(v[i]["file1"].asString()));
+		spr->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr->setLayer(v[i]["position"]["z"].asInt());
+		spr->Scale(0.85f, 0.85f);
+
+		tears.emplace(str, spr);
+
+		Sprite* spr2 = new Sprite(TextureUtil::LoadPng(v[i]["file2"].asString()));
+		spr2->SetPosition(v[i]["position"]["x"].asInt(), v[i]["position"]["y"].asInt());
+		spr2->setLayer(v[i]["position"]["z"].asInt());
+		spr2->Scale(0.85f, 0.85f);
+
+		tears.emplace(str + "-lean", spr2);
+	}
 }
 
 void Monika::Body::draw()
@@ -233,6 +272,24 @@ void Monika::Body::draw()
 	}
 	else {
 		mouths[currentMouth + "-lean"]->Draw();
+	}
+
+	if (currentBlush != "none") {
+		if (filter != 5) {
+			blushes[currentBlush]->Draw();
+		}
+		else {
+			blushes[currentBlush + "-lean"]->Draw();
+		}
+	}
+
+	if (currentTears != "none") {
+		if (filter != 5) {
+			tears[currentTears]->Draw();
+		}
+		else {
+			tears[currentTears + "-lean"]->Draw();
+		}
 	}
 
 }

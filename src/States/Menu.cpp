@@ -177,21 +177,7 @@ int MenuState::audio_thread(unsigned int, void*)
 				stage = 0;
 			}
 
-			switch (stage) {
-			case 0: {numTicksLeft = 240; break; }
-			case 1: {numTicksLeft = 131; break; }
-			case 2: {numTicksLeft = 80; break; }
-			case 3: {numTicksLeft = 100; break; }
-			case 4: {numTicksLeft = 122; break; }
-			case 5: {numTicksLeft = 91; break; }
-			case 6: {numTicksLeft = 90; break; }
-			case 7: {numTicksLeft = 124; break; }
-			case 8: {numTicksLeft = 92; break; }
-			case 9: {numTicksLeft = 60; break; }
-			case 10: {numTicksLeft = 94; break; }
-			case 11: {numTicksLeft = 120; break; }
-			case 12: {numTicksLeft = 175; break; }
-			}
+			numTicksLeft = 300;
 
 
 		}
@@ -204,7 +190,6 @@ int MenuState::audio_thread(unsigned int, void*)
 void MenuState::awaken()
 {
 	Json::Value v = Utilities::JSON::openJSON("./assets/script/awakening.json");
-	Utilities::app_Logger->log("REE");
 	for (int i = 0; i < v[std::to_string(reloads)].size(); i++) {
 		Dialog* d = new Dialog();
 		d->interactionType = INTERACTION_TYPE_NONE;

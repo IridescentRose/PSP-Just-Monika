@@ -55,10 +55,6 @@ void Monika::LivingBackground::draw()
 	int sunsetTime = (sunSet.hour * 3600 + sunSet.minutes * 60);
 	int sunriseTime = (sunRise.hour * 3600 + sunRise.minutes * 60);
 
-	Utilities::app_Logger->log(std::to_string(dayTime));
-	Utilities::app_Logger->log(std::to_string(sunsetTime));
-	Utilities::app_Logger->log(std::to_string(sunriseTime));
-
 	if (dayTime >= sunriseTime + 3600 && dayTime < sunsetTime - 3600) {
 		daySprite->Alpha(255);
 		daySprite->Draw();

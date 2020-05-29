@@ -278,5 +278,171 @@
         "z": 1
       }
     }
+  ],
+
+  "blushes": [
+    {
+      "name": "full",
+      "file1": "./assets/images/monika/face/default/blush/full.png",
+      "file2": "./assets/images/monika/face/lean/blush/full.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "lines",
+      "file1": "./assets/images/monika/face/default/blush/lines.png",
+      "file2": "./assets/images/monika/face/lean/blush/lines.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "shade",
+      "file1": "./assets/images/monika/face/default/blush/shade.png",
+      "file2": "./assets/images/monika/face/lean/blush/shade.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    }
+  ],
+
+  "tears": [
+    {
+      "name": "dried",
+      "file1": "./assets/images/monika/face/default/tears/dried.png",
+      "file2": "./assets/images/monika/face/lean/tears/dried.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "pooled",
+      "file1": "./assets/images/monika/face/default/tears/pooled.png",
+      "file2": "./assets/images/monika/face/lean/tears/pooled.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "pooled-closed-happy",
+      "file1": "./assets/images/monika/face/default/tears/pooled-closed-happy.png",
+      "file2": "./assets/images/monika/face/lean/tears/pooled-closed-happy.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "streaming",
+      "file1": "./assets/images/monika/face/default/tears/streaming.png",
+      "file2": "./assets/images/monika/face/lean/tears/streaming.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "streaming-closed-happy",
+      "file1": "./assets/images/monika/face/default/tears/streaming-closed-happy.png",
+      "file2": "./assets/images/monika/face/lean/tears/streaming-closed-happy.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "streaming-closed-sad",
+      "file1": "./assets/images/monika/face/default/tears/streaming-closed-sad.png",
+      "file2": "./assets/images/monika/face/lean/tears/streaming-closed-sad.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "streaming-wink-left",
+      "file1": "./assets/images/monika/face/default/tears/streaming-wink-left.png",
+      "file2": "./assets/images/monika/face/lean/tears/streaming-wink-left.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "streaming-wink-right",
+      "file1": "./assets/images/monika/face/default/tears/streaming-wink-right.png",
+      "file2": "./assets/images/monika/face/lean/tears/streaming-wink-right.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "up",
+      "file1": "./assets/images/monika/face/default/tears/up.png",
+      "file2": "./assets/images/monika/face/lean/tears/up.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "up-closed-happy",
+      "file1": "./assets/images/monika/face/default/tears/up-closed-happy.png",
+      "file2": "./assets/images/monika/face/lean/tears/up-closed-happy.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "up-closed-sad",
+      "file1": "./assets/images/monika/face/default/tears/up-closed-sad.png",
+      "file2": "./assets/images/monika/face/lean/tears/up-closed-sad.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "up-wink-left",
+      "file1": "./assets/images/monika/face/default/tears/up-wink-left.png",
+      "file2": "./assets/images/monika/face/lean/tears/up-wink-left.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    },
+    {
+      "name": "up-wink-right",
+      "file1": "./assets/images/monika/face/default/tears/up-wink-right.png",
+      "file2": "./assets/images/monika/face/lean/tears/up-wink-right.png",
+      "position": {
+        "x": 240,
+        "y": 124,
+        "z": 1
+      }
+    }
   ]
 }
