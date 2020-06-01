@@ -27,7 +27,7 @@ int main() {
 		app->draw();
 
 		Platform::platformUpdate();
-		Graphics::g_RenderCore.EndCommands();
+		Graphics::g_RenderCore.EndCommands(false, false);
 	}
 
 	delete app;
