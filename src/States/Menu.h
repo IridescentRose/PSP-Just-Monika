@@ -39,6 +39,8 @@ private:
 	UI::UIText* txt;
 	int dayTime;
 
+	bool lookAtChat;
+
 	Json::Value introSeq;
 	bool triggerIntro;
 	int introPhase;

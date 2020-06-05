@@ -70,23 +70,28 @@ void MenuState::init()
 	PFL_BeginCPURecord();
 
 	txt = new UI::UIText({12, 12}, "example");
+	lookAtChat = true;
 }
 
 void MenuState::cleanup()
 {
 }
 
-
+#include <Utilities/Input.h>
 
 bool audioPlayFlag = false;
 void MenuState::update(GameStateManager* st)
 {
+	if (Utilities::KeyPressed(PSP_CTRL_CIRCLE)) {
+		lookAtChat = !lookAtChat;
+	}
+
 	livingBG->update();
 
+	if(lookAtChat)
+		dial->update();
 
-	dial->update();
-
-	if (dialog->isEngaged() && triggerIntro) {
+	if (dialog->isEngaged() && triggerIntro && lookAtChat) {
 
 		dialog->update();
 
@@ -105,11 +110,15 @@ void MenuState::update(GameStateManager* st)
 	else {
 		if (speaking && !dialog->isEngaged()) {
 			speaking = false;
+			lookAtChat = true;
 		}
 		else {
-			dialog->update();
-			dial->update();
-			dialog->update();
+
+			if (lookAtChat){
+				dialog->update();
+				dial->update();
+				dialog->update();
+			}
 		}
 	}
 
@@ -157,7 +166,8 @@ void MenuState::draw(GameStateManager* st)
 	sceGuEnable(GU_BLEND);
 	livingBG->draw();
 
-	dialog->draw();
+	if (lookAtChat)
+		dialog->draw();
 	txt->draw();
 }
 
