@@ -34,6 +34,7 @@ void MenuState::init()
 	username = v["username"].asString();
 
 	livingBG = new Monika::LivingBackground();
+	livingBG->body->setExprFilter("1esa");
 	if (!playThrough) {
 		//INTRO SEQUENCE
 		triggerIntro = true;
@@ -53,7 +54,7 @@ void MenuState::init()
 	}
 
 	Json::Value v2;
-	v2["firstPlayed"] = false;
+	v2["firstPlayed"] = true;
 	v2["username"] = username;
 	v2["numReload"] = reloads;
 
