@@ -114,6 +114,9 @@ void MenuState::update(GameStateManager* st)
 	}
 
 	if (!speaking) {
+
+		livingBG->body->setExprFilter("1esa");
+
 		timeTilNextMessage--;
 
 		if (timeTilNextMessage <= 0) {
