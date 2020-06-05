@@ -1,5 +1,4 @@
 #include "BodyBase.h"
-#include <Utilities/JSON.h>
 #include <Utilities/Logger.h>
 #include <Utilities/Input.h>
 #include <iostream>
@@ -7,6 +6,7 @@
 
 Monika::Body::Body()
 {
+	initFilters();
 	filter = 0;
 	Json::Value v = Utilities::JSON::openJSON("./assets/body.json")["data"];
 
@@ -38,11 +38,11 @@ Monika::Body::Body()
 	v = Utilities::JSON::openJSON("./customize.json");
 	int hairChoice = v["hair"].asInt();
 	std::string clothingChoice = v["outfit"].asString();
-	currentEyes = v["eyes"].asString();
-	currentEyebrows = v["eyebrows"].asString();
-	currentMouth = v["mouth"].asString();
-	currentBlush = v["blush"].asString();
-	currentTears = v["tears"].asString();
+	currentEyes = "normal";
+	currentEyebrows = "mid";
+	currentMouth = "smirk";
+	currentBlush = "none";
+	currentTears = "none";
 
 	std::string rib = v["ribbon"].asString();
 
@@ -339,6 +339,303 @@ void Monika::Body::draw()
 }
 
 void Monika::Body::update()
+{
+	
+}
+
+void Monika::Body::setExprFilter(std::string str)
+{
+	if (str.length() >= 4) {
+		switch (str.at(0)) {
+		case '1': {
+			filter = 4;
+			break;
+		}
+		case '6': {
+			filter = 1;
+			break;
+		}
+
+		case '2': {
+			filter = 0;
+			break;
+		}
+		case '5': {
+			filter = 5;
+			break;
+		}
+
+		case '3': {}
+		case '4': {
+			filter = 3;
+			break;
+		}
+		case '7': {
+			filter = 2;
+			break;
+		}
+
+		default: {
+			filter = 4;
+			break;
+		}
+
+		}
+
+		switch (str.at(1)) {
+		case 'd': {
+			currentEyes = "closed-sad";
+			break;
+		}
+		case 'h': {
+			currentEyes = "closed-happy";
+			break;
+		}
+		case 'e': {
+			currentEyes = "normal";
+			break;
+		}
+
+		case 'l': {
+			currentEyes = "left";
+			break;
+		}
+		case 'r': {
+			currentEyes = "right";
+			break;
+		}
+		case 'c': {
+			currentEyes = "crazy";
+			break;
+		}
+		case 's': {
+			currentEyes = "sparkle";
+			break;
+		}
+		case 't': {
+			currentEyes = "smug";
+			break;
+		}
+		case 'w': {
+			currentEyes = "wide";
+			break;
+		}
+		case 'f': {
+			currentEyes = "soft";
+			break;
+		}
+		case 'k': {
+			currentEyes = "wink-left";
+			break;
+		}
+
+		default: {
+			currentEyes = "normal";
+			break;
+		}
+		}
+
+		switch (str.at(2)) {
+		case 'k': {
+			currentEyebrows = "knit";
+			break;
+		}
+		case 'f': {
+			currentEyebrows = "furrowed";
+			break;
+		}
+		case 's': {
+			currentEyebrows = "mid";
+			break;
+		}
+		case 'u': {
+			currentEyebrows = "up";
+			break;
+		}
+		case 't': {
+			currentEyebrows = "think";
+			break;
+		}
+		default: {
+			currentEyebrows = "mid";
+			break;
+		}
+
+		}
+
+		//Well now we have the basics, we have optional blush, tears, and sweatdrops. Our app doesn't care about sweatdrops (look nearly invisible!)
+		//A regular line will be 4
+
+		int finalPos = str.length() - 1;
+
+		if (str.length() == 6) {
+			//Could be a sweat drop, blush, or tears
+			if (str.at(3) == 'b') {
+				//Blush
+				if (str.at(4) == 'f') {
+					currentBlush = "full";
+				}
+				else if (str.at(4) == 's') {
+					currentBlush = "shade";
+				}
+				else if (str.at(4) == 'l') {
+					currentBlush = "lines";
+				}
+				else {
+					currentBlush = "none";
+				}
+			}else if (str.at(3) == 't') {
+				//Tears
+				switch (str.at(4)) {
+				case 's': {
+					currentTears = "streaming";
+					if (currentEyes == "closed-happy" || currentEyes == "closed-sad" || currentEyes == "wink-left") {
+						currentTears += "-" + currentEyes;
+					}
+					break;
+				}
+				case 'u': {
+					currentTears = "up";
+					if (currentEyes == "closed-happy" || currentEyes == "closed-sad" || currentEyes == "wink-left") {
+						currentTears += "-" + currentEyes;
+					}
+					break;
+				}
+				case 'd': {
+					currentTears = "dried";
+					break;
+				}
+
+				case 'p': {
+					currentTears = "pooled";
+					if (currentEyes == "closed-happy") {
+						currentTears += "-" + currentEyes;
+					}
+					break;
+				}
+				}
+			}
+		}
+		else if (str.length() == 8) {
+			//Could be a combination
+			if (str.at(3) == 'b') {
+				//Blush
+				if (str.at(4) == 'f') {
+					currentBlush = "full";
+				}
+				else if (str.at(4) == 's') {
+					currentBlush = "shade";
+				}
+				else if (str.at(4) == 'l') {
+					currentBlush = "lines";
+				}
+				else {
+					currentBlush = "none";
+				}
+			}
+
+			if (str.at(5) == 't') {
+				//Tears
+				switch (str.at(4)) {
+				case 's': {
+					currentTears = "streaming";
+					if (currentEyes == "closed-happy" || currentEyes == "closed-sad" || currentEyes == "wink-left") {
+						currentTears += "-" + currentEyes;
+					}
+					break;
+				}
+				case 'u': {
+					currentTears = "up";
+					if (currentEyes == "closed-happy" || currentEyes == "closed-sad" || currentEyes == "wink-left") {
+						currentTears += "-" + currentEyes;
+					}
+					break;
+				}
+				case 'd': {
+					currentTears = "dried";
+					break;
+				}
+
+				case 'p': {
+					currentTears = "pooled";
+					if (currentEyes == "closed-happy") {
+						currentTears += "-" + currentEyes;
+					}
+					break;
+				}
+				}
+			}
+		}
+		else {
+			currentBlush = "none";
+			currentTears = "none";
+		}
+
+
+		//Mouth is final
+		switch (str.at(finalPos)) {
+		case 'a': {
+			currentMouth = "smile";
+			break;
+		}
+
+		case 'b': {
+			currentMouth = "big";
+			break;
+		}
+		case 'c': {
+			currentMouth = "smirk";
+			break;
+		}
+		case 'u': {
+			currentMouth = "smug";
+			break;
+		}
+		case 'd': {
+			currentMouth = "small";
+			break;
+		}
+		case 'w': {
+			currentMouth = "wide";
+			break;
+		}
+		case 't': {
+			currentMouth = "triangle";
+			break;
+		}
+		case 'p': {
+			currentMouth = "pout";
+			break;
+		}
+		case 'o': {
+			currentMouth = "gasp";
+			break;
+		}
+		case 'x': {
+			currentMouth = "angry";
+			break;
+		}
+
+		default: {
+			currentMouth = "smile";
+			break;
+		}
+		}
+	}
+	else {
+		Utilities::app_Logger->log("ERROR: UNKOWN POSE " + str + "!");
+	}
+	
+}
+
+/*
+struct Filter {
+		std::string eyes, eyebrows, mouths, blushes, tears;
+		int filter;
+		bool lean;
+};
+*/
+void Monika::Body::initFilters()
 {
 	
 }

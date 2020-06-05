@@ -21,12 +21,12 @@ namespace Monika {
 
 		void update();
 		void draw();
+		Body* body;
 
 	private:
 		void calculateSunRiseSet();
 		void calculateWeatherDay();
 
-		Body* body;
 
 		DayTime sunRise, sunSet;
 		bool newDay;

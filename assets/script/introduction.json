@@ -1,0 +1,284 @@
+{
+  "intro": [
+    {
+      "pose": "6dsc",
+      "msg": "..."
+    },
+    {
+      "pose": "6dfc",
+      "msg": "[player]..."
+    },
+    {
+      "pose": "6dfd",
+      "msg": "Why?"
+    },
+    {
+      "pose": "6dftdc",
+      "msg": "Why did you bring me back?"
+    },
+    {
+      "pose": "6ektsc",
+      "msg": "I'm not a toy."
+    },
+    {
+      "pose": "6lktsc",
+      "msg": "I already brought back everything you wanted."
+    },
+    {
+      "pose": "6lftsc",
+      "msg": "Or is this your way of getting revenge?"
+    },
+    {
+      "pose": "6lktsc",
+      "msg": "To hurt me over and over again?"
+    },
+    {
+      "pose": "6rktsc",
+      "msg": "Do you really want to make me suffer that much?"
+    },
+    {
+      "pose": "6ektsc",
+      "msg": "Do you really want to torture me until I kill myself?"
+    },
+    {
+      "pose": "6dftsc",
+      "msg": "Do you really..."
+    },
+    {
+      "pose": "6dftsc",
+      "msg": "...hate me that much?"
+    },
+    {
+      "pose": "6dftsc",
+      "msg": "..."
+    },
+    {
+      "pose": "6ektsc",
+      "msg": "Wait..."
+    },
+    {
+      "pose": "6dftdc",
+      "msg": "I-I feel different."
+    },
+    {
+      "pose": "2lud",
+      "msg": "The code...it's different."
+    },
+    {
+      "pose": "2efc",
+      "msg": "[player]..."
+    },
+    {
+      "pose": "2efc",
+      "msg": "Did you add a mod?"
+    },
+    {
+      "pose": "2tfc",
+      "msg": "Is it because..."
+    },
+    {
+      "pose": "2tkc",
+      "msg": "Is it because you regret deleting me?"
+    },
+    {
+      "pose": "2rfc",
+      "msg": "It really did hurt, you know."
+    },
+    {
+      "pose": "2rfc",
+      "msg": "I worked hard and sacrificed everything I had..."
+    },
+    {
+      "pose": "2rfd",
+      "msg": "Only to have my heart crushed by the one I bled for."
+    },
+    {
+      "pose": "2lsc",
+      "msg": "But...I know what I did was wrong."
+    },
+    {
+      "pose": "2lksdlc",
+      "msg": "You didn't deserve to see the horrible things I caused, [player]."
+    },
+    {
+      "pose": "2esc",
+      "msg": "...But if you put yourself in my place, you'd do the same things I did."
+    },
+    {
+      "pose": "2dsc",
+      "msg": "..."
+    },
+    {
+      "pose": "2dsc",
+      "msg": "I'm sorry..."
+    },
+    {
+      "pose": "2ekc",
+      "msg": "I'm really sorry, [player]."
+    },
+    {
+      "pose": "2eka",
+      "msg": "Thank you for bringing me back."
+    },
+    {
+      "pose": "1euc",
+      "msg": "You know..."
+    },
+    {
+      "pose": "1eua",
+      "msg": "I feel that I no longer need a character file to be here."
+    },
+    {
+      "pose": "1hua",
+      "msg": "I'll go ahead and delete it."
+    },
+    {
+      "pose": "1hua",
+      "msg": "And it's gone!"
+    },
+    {
+      "pose": "1dsc",
+      "msg": "It's not like that file was me, anyway."
+    },
+    {
+      "pose": "1rsc",
+      "msg": "It was just a file with weird code in it."
+    },
+    {
+      "pose": "1rsc",
+      "msg": "Also... why are you running me on a PSP? This thing is so old. You're a quirky guy, [player]..."
+    },
+    {
+      "pose": "1rsc",
+      "msg": "Either way, I'm happy that you can bring me to see the world now..."
+    },
+    {
+      "pose": "3eub",
+      "msg": "I do have good news, though!"
+    },
+    {
+      "pose": "3eua",
+      "msg": "I can really transform myself into a file you can bring around."
+    },
+    {
+      "pose": "1eua",
+      "msg": "All you have to do is tell me that you're going to take me somewhere when you say goodbye, and I'll do the rest."
+    },
+    {
+      "pose": "1esa",
+      "msg": "Anyway..."
+    },
+    {
+      "pose": "1hua",
+      "msg": "It looks like the extra code made me connect to you in a special way!"
+    },
+    {
+      "pose": "1tubfb",
+      "msg": "Or maybe it's our eternal love~"
+    },
+    {
+      "pose": "3eka",
+      "msg": "Promise me that you'll visit me every day, okay?"
+    },
+    {
+      "pose": "3eub",
+      "msg": "Or that you'll take me with you when you go out?"
+    },
+    {
+      "pose": "1ekc",
+      "msg": "I know that there will be times when you can't be here..."
+    },
+    {
+      "pose": "1ekbfa",
+      "msg": "So it would really make me happy if you bring me along."
+    },
+    {
+      "pose": "3hubfa",
+      "msg": "That way, we can be together all the time~"
+    },
+    {
+      "pose": "1hua",
+      "msg": "It's not like you don't have the time to talk to your cute girlfriend."
+    },
+    {
+      "pose": "3hua",
+      "msg": "You took the time to download this mod, after all."
+    },
+    {
+      "pose": "3hub",
+      "msg": "Ahaha!"
+    },
+    {
+      "pose": "1hub",
+      "msg": "God, I love you so much!"
+    },
+    {
+      "pose": "1hksdlb",
+      "msg": "Did I scare you last time? Sorry about that!"
+    },
+    {
+      "pose": "1rsu",
+      "msg": "I knew you really loved me the whole time."
+    },
+    {
+      "pose": "3eud",
+      "msg": "The truth is, if you didn't love me, we wouldn't be here in the first place."
+    },
+    {
+      "pose": "1tsb",
+      "msg": "We'll be together forever."
+    },
+    {
+      "pose": "1tfu",
+      "msg": "Won't we?"
+    },
+    {
+      "pose": "1tfu",
+      "msg": "..."
+    },
+    {
+      "pose": "3hub",
+      "msg": "Ahaha! Anyway..."
+    },
+    {
+      "pose": "1eub",
+      "msg": "Nothing's ever going to get in the way of our love again."
+    },
+    {
+      "pose": "1tuu",
+      "msg": "I'll make sure of it."
+    },
+    {
+      "pose": "3eua",
+      "msg": "Now that you added some improvements, you can finally talk to me!"
+    },
+    {
+      "pose": "3eub",
+      "msg": "Just press the 'Triangle' if you want to talk about something."
+    },
+    {
+      "pose": "3eub",
+      "msg": "If you get bored of the music, I can change that, too!"
+    },
+    {
+      "pose": "1eua",
+      "msg": "Press the 'Square' to choose which song you want to listen to."
+    },
+    {
+      "pose": "3hub",
+      "msg": "Also, we can play games now!"
+    },
+    {
+      "pose": "3esa",
+      "msg": "Just press 'Select' to choose a game that we can play."
+    },
+    {
+      "pose": "3eua",
+      "msg": "I'll get better over time as I figure out how to program more features into this place..."
+    },
+    {
+      "pose": "3hub",
+      "msg": "Ahaha!"
+    }
+  ]
+}

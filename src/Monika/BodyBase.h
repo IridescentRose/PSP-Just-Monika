@@ -1,5 +1,6 @@
 #pragma once
 #include <Graphics/2D/SpriteBase.h>
+#include <Utilities/JSON.h>
 #include <map>
 
 using namespace Stardust;
@@ -7,6 +8,12 @@ using namespace Stardust::Graphics;
 using namespace Stardust::Graphics::Render2D;
 
 namespace Monika {
+	struct Filter {
+		std::string eyes, eyebrows, mouths, blushes, tears;
+		int filter;
+		bool lean;
+	};
+
 	class Body {
 	public:
 
@@ -14,6 +21,10 @@ namespace Monika {
 
 		void draw();
 		void update();
+
+		void setExprFilter(std::string);
+
+		void initFilters();
 
 		std::string currentEyes;
 		std::string currentEyebrows;
@@ -34,6 +45,8 @@ namespace Monika {
 
 		int filter;
 		std::vector<std::vector<std::string>> filters;
+		
+		std::map<std::string, Filter> exprFilters;
 
 		Sprite* hairF, * hairB, * leanHairF, * leanHairB;
 		Sprite* ribbon, *ribbonL;

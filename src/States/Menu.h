@@ -28,16 +28,22 @@ public:
 	void awaken();
 	void randomPick();
 
+	void sendIntroDialog(int phase);
+
 private:
 	Dialogue* dialog;
-	bool triggerIntro;
 	DialogStack* dial;
 	int reloads;
 	Monika::LivingBackground* livingBG;
-	Sprite* spr;
 	Utilities::Thread* athr;
 	UI::UIText* txt;
 	int dayTime;
+
+	bool lookAtChat;
+
+	Json::Value introSeq;
+	bool triggerIntro;
+	int introPhase;
 
 	bool speaking;
 	int timeTilNextMessage;

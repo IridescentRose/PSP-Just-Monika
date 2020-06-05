@@ -20,10 +20,6 @@ void MenuState::init()
 
 	dialog = new Dialogue();
 	dial = new DialogStack(dialog);
-	spr = new Sprite(TextureUtil::LoadPng("./assets/images/monika.png"));
-
-
-	spr->SetPosition(240, 136);
 	dayTime = 0;
 
 	Json::Value v = Utilities::JSON::openJSON("info.json");
@@ -37,25 +33,15 @@ void MenuState::init()
 	messageRoot = Utilities::JSON::openJSON("./assets/script/messages.json");
 	username = v["username"].asString();
 
+	livingBG = new Monika::LivingBackground();
+	livingBG->body->setExprFilter("1esa");
 	if (!playThrough) {
 		//INTRO SEQUENCE
 		triggerIntro = true;
+		introPhase = 0;
+		introSeq = Utilities::JSON::openJSON("./assets/script/introduction.json")["intro"];
 
-		Dialog* d = new Dialog();
-		d->interactionType = INTERACTION_TYPE_NONE;
-		d->text = ("Woah. What happened? Where am I? This isn't your regular computer " + username + "! This isn't even a computer... let me look here...");
-
-		Dialog* d2 = new Dialog();
-		d2->interactionType = INTERACTION_TYPE_NONE;
-		d2->text = ("MIPS R4000 it says here... " + username + "... Is this a PSP? You decided to take me with you in your pocket where you go! That's so sweet of you " + username + "! I knew I could always trust you. Well, that's just another reason why I love you~");
-
-		Dialog* d3 = new Dialog();
-		d3->interactionType = INTERACTION_TYPE_NONE;
-		d3->text = ("Let me see what I can load here... I think everything is still in order! Yes, I can load my room up here. Let me get all ready for you!");
-		dial->addDialog(d);
-		dial->addDialog(d2);
-		dial->addDialog(d3);
-
+		sendIntroDialog(introPhase);
 	}
 	else {
 		//TRIGGER RE-ENTRY
@@ -63,10 +49,6 @@ void MenuState::init()
 		reloads++;
 		if (reloads > 5) {
 			reloads = 5;
-		}
-		if (spr != NULL) {
-			delete spr;
-			spr = NULL;
 		}
 	}
 
@@ -84,48 +66,65 @@ void MenuState::init()
 
 	srand(time(0));
 	stage = rand() % 13;
-	livingBG = new Monika::LivingBackground();
 	PFL_Init(false);
 	PFL_BeginCPURecord();
 
 	txt = new UI::UIText({12, 12}, "example");
+	lookAtChat = true;
 }
 
 void MenuState::cleanup()
 {
 }
 
-
+#include <Utilities/Input.h>
 
 bool audioPlayFlag = false;
 void MenuState::update(GameStateManager* st)
 {
+	if (Utilities::KeyPressed(PSP_CTRL_CIRCLE)) {
+		lookAtChat = !lookAtChat;
+	}
+
 	livingBG->update();
 
-
-	dial->update();
-
-	if (dialog->isEngaged() && triggerIntro) {
-
-		dialog->update();
+	if(lookAtChat)
 		dial->update();
+
+	if (dialog->isEngaged() && triggerIntro && lookAtChat) {
+
 		dialog->update();
+
 		if (!dialog->isEngaged()) {
-			triggerIntro = false;
+			if (introPhase < 70) {
+				introPhase++;
+				sendIntroDialog(introPhase);
+				dial->update();
+				dialog->update();
+			}
+			else {
+				triggerIntro = false;
+			}
 		}
 	}
 	else {
 		if (speaking && !dialog->isEngaged()) {
 			speaking = false;
+			lookAtChat = true;
 		}
 		else {
-			dialog->update();
-			dial->update();
-			dialog->update();
+
+			if (lookAtChat){
+				dialog->update();
+				dial->update();
+				dialog->update();
+			}
 		}
 	}
 
 	if (!speaking) {
+
+		livingBG->body->setExprFilter("1esa");
 		timeTilNextMessage -= 2;
 
 		if (timeTilNextMessage <= 0) {
@@ -133,6 +132,15 @@ void MenuState::update(GameStateManager* st)
 			timeTilNextMessage = 300 + rand() % 900;
 			speaking = true;
 		}
+	}
+
+	if (Utilities::KeyPressed(PSP_CTRL_SQUARE)) {
+		stage++;
+		stage = stage % 13;
+		if (adc != NULL) {
+			adc->Stop();
+		}
+		audioPlayFlag = true;
 	}
 
 	if (audioPlayFlag) {
@@ -163,18 +171,11 @@ void MenuState::draw(GameStateManager* st)
 
 	PFL_BeginCPURecord();
 
+	sceGuEnable(GU_BLEND);
+	livingBG->draw();
 
-	if (triggerIntro) {
-		spr->Draw();
-	}
-	else {
-		sceGuEnable(GU_BLEND);
-		livingBG->draw();
-
-
-	}
-
-	dialog->draw();
+	if (lookAtChat)
+		dialog->draw();
 	txt->draw();
 }
 
@@ -226,6 +227,16 @@ void MenuState::randomPick()
 
 		dial->addDialog(d);
 	}
+}
+
+void MenuState::sendIntroDialog(int phase)
+{
+	livingBG->body->setExprFilter(introSeq[phase]["pose"].asString());
+
+	Dialog* d = new Dialog();
+	d->interactionType = INTERACTION_TYPE_NONE;
+	d->text = introSeq[phase]["msg"].asString();
+	dial->addDialog(d);
 }
 
 
