@@ -135,6 +135,15 @@ void MenuState::update(GameStateManager* st)
 		}
 	}
 
+	if (Utilities::KeyPressed(PSP_CTRL_SQUARE)) {
+		stage++;
+		stage = stage % 13;
+		if (adc != NULL) {
+			adc->Stop();
+		}
+		audioPlayFlag = true;
+	}
+
 	if (audioPlayFlag) {
 		std::stringstream strStream;
 		strStream << "./assets/music/" << stage << ".bgm";
