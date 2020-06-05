@@ -61,7 +61,7 @@ void MenuState::init()
 	f << v2;
 	f.close();
 
-	timeTilNextMessage = 300;
+	timeTilNextMessage = 400;
 	speaking = true;
 
 	srand(time(0));
@@ -125,8 +125,7 @@ void MenuState::update(GameStateManager* st)
 	if (!speaking) {
 
 		livingBG->body->setExprFilter("1esa");
-
-		timeTilNextMessage--;
+		timeTilNextMessage -= 2;
 
 		if (timeTilNextMessage <= 0) {
 			randomPick();

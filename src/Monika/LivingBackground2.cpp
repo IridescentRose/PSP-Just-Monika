@@ -15,10 +15,9 @@ Monika::LivingBackground::LivingBackground()
 
 	daySprite = NULL;
 	nightSprite = NULL;
-	rain_sound = new Audio::AudioClip("./assets/music/storm/rain_2.wav", false);
-	rain_sound->SetLoop(true);
-	thunder1 = new Audio::AudioClip("./assets/music/storm/thunder.wav", false);
-	thunder2 = new Audio::AudioClip("./assets/music/storm/thunder_1.wav", false);
+	rain_sound = NULL;
+	thunder1 = NULL;
+	thunder2 = NULL;
 
 	//DETERMINE WEATHER PATTERNS
 	calculateWeatherDay();
@@ -52,14 +51,18 @@ Monika::LivingBackground::LivingBackground()
 	body = new Body();
 
 }
+int myco = 0;
 void Monika::LivingBackground::update()
 {
 	body->update();
-	sceRtcGetCurrentClockLocalTime(myCurrentTime);
-	if (myCurrentTime->day != day) {
-		calculateSunRiseSet();
+	myco++;
+	if (myco % 60 == 0) {
+		sceRtcGetCurrentClockLocalTime(myCurrentTime);
+		if (myCurrentTime->day != day) {
+			calculateSunRiseSet();
+		}
+		day = myCurrentTime->day;
 	}
-	day = myCurrentTime->day;
 
 
 	dayTime = myCurrentTime->hour * 3600 + myCurrentTime->minutes * 60 + myCurrentTime->seconds;
@@ -84,91 +87,91 @@ void Monika::LivingBackground::draw()
 	sceGuDisable(GU_ALPHA_TEST);
 	if (dayTime >= sunriseTime + 3600 && dayTime < sunsetTime - 3600) {
 		daySprite->Alpha(255);
-		daySprite->Draw();
+		daySprite->Draw(true);
 
 		if (specialDay) {
 			layer1->Alpha(255);
-			layer1->Draw();
+			layer1->Draw(true);
 		}
 
 		body->draw();
 		
 		tableSprite->Alpha(255);
-		tableSprite->Draw();
+		tableSprite->Draw(true);
 	}
 	else if (dayTime >= sunsetTime - 3600 && dayTime < sunsetTime + 3600) {
 		daySprite->Alpha(255);
-		daySprite->Draw();
+		daySprite->Draw(true);
 
 		nightSprite->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600))/7200.0f));
-		nightSprite->Draw();
+		nightSprite->Draw(true);
 
 		if (specialDay) {
 			layer1->Alpha(255);
-			layer1->Draw();
+			layer1->Draw(true);
 
 			layer2->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600)) / 7200.0f));
-			layer2->Draw();
+			layer2->Draw(true);
 		}
 
 		body->draw();
 		
 		tableSprite->Alpha(255);
-		tableSprite->Draw();
+		tableSprite->Draw(true);
 
 		tableSpriteN->Alpha(255 * ((float)(dayTime - (sunsetTime - 3600)) / 7200.0f));
-		tableSpriteN->Draw();
+		tableSpriteN->Draw(true);
 	}
 	else if (dayTime >= sunsetTime + 3600 || dayTime < sunriseTime - 3600) {
 		nightSprite->Alpha(255);
-		nightSprite->Draw();
+		nightSprite->Draw(true);
 		
 		if (specialDay) {
 			layer2->Alpha(255);
-			layer2->Draw();
+			layer2->Draw(true);
 		}
 
 		body->draw();
 		
 		tableSpriteN->Alpha(255);
-		tableSpriteN->Draw();
+		tableSpriteN->Draw(true);
 	}
 	else if (dayTime >= sunriseTime - 3600 && dayTime < sunriseTime + 3600) {
 		nightSprite->Alpha(255);
-		nightSprite->Draw();
+		nightSprite->Draw(true);
 
 		if (specialDay) {
 			layer2->Alpha(255);
-			layer2->Draw();
+			layer2->Draw(true);
 
 			layer1->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
-			layer1->Draw();
+			layer1->Draw(true);
 		}
 
 		daySprite->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
-		daySprite->Draw();
+		daySprite->Draw(true);
 
 		body->draw();
 	
 		tableSpriteN->Alpha(255);
-		tableSpriteN->Draw();
+		tableSpriteN->Draw(true);
 
 		tableSprite->Alpha(255 * ((float)(dayTime - (sunriseTime - 3600)) / 7200.0f));
-		tableSprite->Draw();
+		tableSprite->Draw(true);
 	}
 	else {
 		daySprite->Alpha(255);
-		daySprite->Draw();
+		daySprite->Draw(true);
 
 		if (specialDay) {
 			layer1->Alpha(255);
-			layer1->Draw();
+			layer1->Draw(true);
 		}
 
 		body->draw();
 		
 		tableSprite->Alpha(255);
-		tableSprite->Draw();
+		tableSprite->Draw(true);
 	}
 
 }
@@ -203,9 +206,8 @@ void Monika::LivingBackground::calculateWeatherDay()
 	
 	int rnd = myCurrentTime->month * 30 + myCurrentTime->day + myCurrentTime->year * 367;
 
-
 	if (rnd % 3 == 0) {
-		//Overcast 33% chance rain
+		//Overcast 50% chance rain
 		if (rnd % 2 == 0) {
 			//Rain
 			if (myCurrentTime->month < 3 || myCurrentTime->month >= 11) {
@@ -217,6 +219,12 @@ void Monika::LivingBackground::calculateWeatherDay()
 				daySprite = new Sprite(TextureUtil::LoadPng("./assets/images/room/day/spaceroom_rain.png"));
 				nightSprite = new Sprite(TextureUtil::LoadPng("./assets/images/room/night/spaceroom_rain-n.png"));
 				rain = true;
+
+
+				rain_sound = new Audio::AudioClip("./assets/music/storm/rain_2.wav", false);
+				rain_sound->SetLoop(true);
+				thunder1 = new Audio::AudioClip("./assets/music/storm/thunder.wav", false);
+				thunder2 = new Audio::AudioClip("./assets/music/storm/thunder_1.wav", false);
 
 				rain_sound->Play(4);
 				thunder1->Play(1);
@@ -239,10 +247,14 @@ void Monika::LivingBackground::calculateWeatherDay()
 
 	daySprite->SetPosition(240, 136);
 	daySprite->setLayer(-10);
+	daySprite->Scale(2.0f, 2.0f);
 	nightSprite->SetPosition(240, 136);
-	daySprite->setLayer(-10);
+	nightSprite->setLayer(-10);
+	nightSprite->Scale(2.0f, 2.0f);
 
 
 	tableSprite->SetPosition(248, 272 - 64);
+	tableSprite->Scale(2.0f, 2.0f);
 	tableSpriteN->SetPosition(248, 272 - 64);
+	tableSpriteN->Scale(2.0f, 2.0f);
 }
