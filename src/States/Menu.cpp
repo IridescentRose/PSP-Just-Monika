@@ -38,7 +38,6 @@ void MenuState::init()
 	if (!playThrough) {
 		//INTRO SEQUENCE
 		triggerIntro = true;
-		std::cout << "hello" << std::endl;
 		introPhase = 0;
 		introSeq = Utilities::JSON::openJSON("./assets/script/introduction.json")["intro"];
 
