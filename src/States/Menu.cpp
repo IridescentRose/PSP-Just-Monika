@@ -32,7 +32,7 @@ void MenuState::init()
 	adc = NULL;
 	athr = new Utilities::Thread(audio_thread);
 	athr->Start(0);
-	messageRoot = Utilities::JSON::openJSON("./assets/script/facts.json");
+	messageRoot = Utilities::JSON::openJSON("./assets/script/topics.json");
 	username = v["username"].asString();
 
 	livingBG = new Monika::LivingBackground();
@@ -233,9 +233,9 @@ void MenuState::awaken()
 
 void MenuState::randomPick()
 {
-	mainChoice = rand() % messageRoot["facts"].size();
+	mainChoice = rand() % messageRoot["topics"].size() + 1;
 	introPhase = 0;
-	mainSize = messageRoot["facts"][mainChoice].size();
+	mainSize = messageRoot["topics"][mainChoice].size();
 	sendMainDialog();
 }
 
@@ -251,10 +251,10 @@ void MenuState::sendIntroDialog(int phase)
 
 void MenuState::sendMainDialog()
 {
-	livingBG->body->setExprFilter(messageRoot["facts"][mainChoice][introPhase++].asString());
+	livingBG->body->setExprFilter(messageRoot["topics"][mainChoice][introPhase++].asString());
 	Dialog* d = new Dialog();
 	d->interactionType = INTERACTION_TYPE_NONE;
-	d->text = messageRoot["facts"][mainChoice][introPhase++].asString();
+	d->text = messageRoot["topics"][mainChoice][introPhase++].asString();
 	dial->addDialog(d);
 }
 
