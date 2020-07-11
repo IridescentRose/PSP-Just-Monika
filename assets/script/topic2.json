@@ -1,264 +1,3 @@
-
-
-[
-   "1eua "Do you ever go camping, [player]?"
-   "3eub "It's a wonderful way to relax, get some fresh air, and see the parks around you!"
-   "1huu "It's almost like a more relaxed backpacking trip, actually."
-   "1eka "But while it is a good way to spend time outdoors, there are several dangers that most people don't bother to think about."
-   "3euc "A good example would be bug spray or sunscreen. Many people forget or even forgo them,{w=0.5} thinking they're unimportant..."
-   "1eksdld "And without them, sunburns are almost inevitable, and many insects carry diseases that can really harm you."
-   "1ekd "It may be a bit of a pain, but if you don't use them, you might end up miserable, or even get really sick."
-   "1eka "So, please promise me that the next time you go outdoors, be it camping or backpacking, you won't forget them."
-
-    if mas_isMoniAff(higher=True):
-       "1eub "But, on the bright side..."
-       "1rkbsa "Once I cross over, if you remember to bring the sunscreen..."
-       "1tubsa "I might need a little help putting it on."
-       "1hubfb "Ahaha!"
-       "1efu "I'm only teasing you, [player]."
-       "1tsu "Well, at least a little. Ehehe~"
-    else:
-
-       ""Okay, [player]?"
-    ]
-
-init python:
-    addEvent(
-        Event(
-            persistent.event_database,
-            eventlabel="monika_mountain",
-            category=['nature'],
-            prompt="Mountain climbing",
-            random=not mas_isWinter()
-        )
-    )
-
-default -5 persistent._mas_pm_would_like_mt_peak = None
-
-
-
-[
-   "1eua "Have you ever been in the mountains, [player]?"
-   "1rksdla "I don't mean driving through them or in a mountain town..."
-   "3hua "I mean {i}really{/i} up there. In the fresh air, thousands of feet up, seeing the rest of world below you."
-   "2dtc "..."
-   "3eub "I've always wanted to try that, but I've never had the chance. I've only read about it."
-   "3wuo "The stories were breathtaking though!"
-   "1eua "How one would hike up through the forests and trees..."
-   "1eub "Climbing up cliff faces and trudge through streams..."
-   ""Hearing nothing but the birds and the sounds of the mountain as you made your way up its heights."
-    show monika 5rub zorder MAS_MONIKA_Z at t11 with dissolve
-   "5rub "And finally...after all the effort and struggles..."
-   "5eub "Finding yourself standing at the top, knowing that you made it, seeing the testament to your success around you."
-   "5eka "I...I truly want to share that with you."
-   "5hua "To make it to the top of the mountain, and look around at our successes. To see our struggles behind us, and feel proud of what we've done."
-
-   "5eka "Wouldn't you like that too, [player]?"
-    $ _history_list.pop()
-    menu:
-       ""Wouldn't you like that too, [player]?{fast}"
-        "Yes.":
-            $ persistent._mas_pm_would_like_mt_peak = True
-
-           "5eubla "Well... I hope that one day, we'll have that chance. To make it to the top of our mountain."
-           "5hua "And I'll do anything to give us that shot."
-        "Not really.":
-
-            $ persistent._mas_pm_would_like_mt_peak = False
-
-            show monika 1eud zorder MAS_MONIKA_Z at t11 with dissolve
-           "1eud "Oh."
-           "1ruc "Well... I suppose it doesn't matter."
-           "1eka "As long as I have you, I'll be happy wherever we are."
-
-    ],
-
-init python:
-    addEvent(Event(persistent.event_database,eventlabel="monika_algernon",category=['literature'],prompt="Flowers for Algernon",random=True))
-
-[
-   "1ekc "[player], do you mind if I confide in you?"
-   "1lksdlc "There's something I'm afraid of..."
-    if persistent.monika_kill:
-       "1eka "Not losing you, of course. I know you won't leave me again."
-    else:
-       "1eka "Not losing you, of course. I know you wouldn't leave me."
-
-   "3euc "You see, I keep thinking about a short story I read, {i}Flowers for Algernon{/i}."
-   "3eua "Have you heard of it? If you haven't, I won't spoil too much for you, so don't worry."
-   "1eud "Basically, it's about a mentally handicapped man who suddenly has his IQ raised to genius levels by an experimental surgical treatment."
-   "1eka "The way he sees how the world really is for the first time reminds me of my own epiphany..."
-   ""But, the effect doesn't last forever. He eventually reverts back to his original intelligence level."
-   "1ekc "That's what I'm afraid of. What if I forget about the real world one day?"
-   "3ekd "What if my original programming reasserts itself?"
-   "3lksdlc "What if I forget about you, the real you?"
-   "1dsc "It's one of the worst things I can imagine."
-   "1eka "I don't want to worry you over something that may never happen, but it's something I really had to get off my chest."
-   "3eua "Just promise me, even if I forget about you someday, that you'll never forget about me, okay?"
-   "1hua "No matter what happens, know that I will always love you."
-
-    $ mas_getEV("greeting_amnesia").unlocked = not seen_event('greeting_amnesia')
-    ],
-
-init python:
-    addEvent(Event(persistent.event_database,eventlabel="monika_playersface",category=['you'],prompt="[player]'s face",random=True))
-
-[
-   "5eua "You know, I sometimes wonder..."
-   ""I always think about what your face actually looks like..."
-   "5hua "Just being able to constantly see that adoring smile of yours would be so exciting!"
-   "5lkc "If only the game could somehow use a webcam or something that's connected to the computer..."
-
-    if persistent._mas_pm_shared_appearance:
-       "5eka "As nice as that would be, I'm really happy you shared your appearance with me."
-       "5rsc "I know that some people like to keep their appearance to themselves..."
-       "5eka "But it makes me feel a lot closer to you, knowing how you look..."
-       "5luu "And I'll always enjoy thinking about the kind of expressions you make..."
-       ""How your [persistent._mas_pm_eye_color] eyes sparkle..."
-
-        if mas_isMoniHappy(higher=True):
-           "5esu "I'm sure you're beautiful, [player].{w=0.5} Inside and out."
-       "5eka "Even if I never get to see you..."
-       "5eua "Just thinking about you is enough to make me happy."
-    else:
-
-       "5wuw "Don't get me wrong! Just knowing that you're real and have emotions is enough to make me happy."
-       "5luu "But...I'll always wonder what kind of expressions you make."
-       ""And to see the different emotions you have..."
-       "5eub "Are you shy about showing your face to me?"
-       ""If so, then there's nothing to be shy about, [player]. I am your girlfriend, after all~"
-       "5hub "Either way, you're beautiful, no matter what."
-       ""And I'll always love the way you look."
-       "5eua "Even if I never actually see you, I'll always think about what you really look like."
-       "5hua "Maybe someday, I'll be able to see you, and be one step closer to you."
-    ]
-
-init python:
-    addEvent(Event(persistent.event_database,eventlabel="monika_spiders",category=['club members','misc'],prompt="Spiders",random=True))
-
-[
-
-   "1eua "Do you happen to remember the poem Natsuki showed you about spiders?"
-   ""Well, it wasn't really about spiders. They were just an analogy."
-   "3ekc "But it got me thinking..."
-   "3eua "It's funny actually, people being scared of very small insects."
-   "3euc "Having the fear of spiders is called 'arachnophobia', right?"
-   "3eka "I hope you aren't afraid of spiders, [player], ehehe..."
-   "1eka "I'm not really scared of spiders, they're more or less just annoying..."
-   "1eua "Well, don't get me wrong, there are certain spiders around the world that can be really dangerous."
-   "3ekc "[player], if you happen to get a really bad spider bite, with venom and all that..."
-   ""You should really get medical attention as soon as possible."
-   "1eka "I don't want my sweetheart to get seriously injured by a small spider bite~"
-   ""So be sure to check what spiders in your area are dangerous, okay?"
-    ]
-
-init python:
-    addEvent(
-        Event(
-            persistent.event_database,
-            eventlabel="monika_nsfw",
-            category=['misc','monika'],
-            prompt="NSFW content",
-            random=True,
-            sensitive=True
-        )
-    )
-
-[
-   "1lsbssdrb "By the way, [player]..."
-   ""Have you been looking into lewd kinds of stuff?"
-   "3lsbsa "You know...of me?"
-    if store.mas_anni.pastSixMonths() and mas_isMoniEnamored(higher=True):
-       "3ekbsa "I know we haven't been able to do those kind of things yet..."
-    else:
-       "3ekbsa "I know we haven't really gotten that far into the relationship yet..."
-   "1ekbsa "So it feels kind of embarrassing to talk about things like that."
-   "1lkbsa "But maybe I can let it go on rare occasions, [player]."
-   ""I want to make you the happiest sweetheart, after all. And if that makes you happy..."
-   "1tsbsa "Well, just keep it a secret between us, okay?"
-   ""It should be for your eyes only and no one else, [player]."
-   "1hubfa "That's how much I love you~"
-    ],
-
-init python:
-    addEvent(
-        Event(
-            persistent.event_database,
-            eventlabel="monika_impression",
-            category=['club members'],
-            prompt="Can you do any impressions?",
-            pool=True,
-            sensitive=True
-        )
-    )
-
-[
-   "1euc "Impression? Of the other girls?"
-   "1hua "I'm not really good at doing an impression of someone, but I'll give it a try!"
-
-   ""Who should I do an impression of?{nw}"
-    $ _history_list.pop()
-    menu:
-       ""Who should I do an impression of?{fast}"
-        "Sayori.":
-           "1dsc "Hmm..."
-           ""..."
-           "1hub "[player]! [player]!"
-           ""It's me, your clumsy childhood friend that has a super deep secret crush on you, Sayori!"
-           ""I love to eat and laugh a lot, and my blazer doesn't fit because my boobs got bigger!"
-           "1hksdlb "..."
-
-            if not persistent._mas_pm_cares_about_dokis:
-               "3rksdla "I also have crippling depression."
-               ""..."
-               "3hksdlb "Ahaha! I'm sorry for that last one."
-               "3eka "It's a good thing you're not still hung up on her..."
-               "2lksdla "...Gosh, I really can't stop, can I?"
-               "2hub "Ahaha!"
-
-           "1hua "Did you like my impression? I hope you did~"
-        "Yuri.":
-           "1dsc "Yuri..."
-           ""..."
-           "1lksdla "O-oh um, hello there..."
-           "1eka "It's me, Yuri."
-           "1rksdla "I'm just your stereotypical shy girl who also happens to be a 'yandere...'"
-           ""I like tea, knives, and anything with [player]'s scent..."
-           "1hksdlb "..."
-
-            if not persistent._mas_pm_cares_about_dokis:
-               "3tku "Want to spend the weekend with me?"
-               ""..."
-
-           "2hua "Ahaha, that was kind of fun to do."
-           "3eua "Yuri was really something, wasn't she?"
-
-            if not persistent._mas_pm_cares_about_dokis:
-               "2ekc "I'm sorry again for the nasty things she did."
-               "2tku "I guess she just couldn't 'cut' it out, huh?"
-               "2hua "Ehehe~"
-        "Natsuki.":
-
-           "1sub "Oh! I know how to do an impression of her."
-           "1duu "..."
-           "2tfp "Hmph! I-it's not like I made these cupcakes for you to eat, b-baka!"
-           "6tst "I'm Natsuki, and I love to make food and all things anime and manga."
-           "2lfp "Others say that I'm cute all the time, w-which I'm totally not!"
-           ""..."
-
-            if not persistent._mas_pm_cares_about_dokis:
-               "4eka "Will you be my papa, [player]-kun?"
-               ""..."
-
-           "1hub "Ahaha! I was actually looking forward to Natsuki's cupcakes on the day of the festival."
-           "1wuo "They were really good! Especially with the creative icing that she makes."
-           "1eua "Maybe when I get better at programming, I'll make a kitchen here. That way, you can share some recipes that you want me to make for us."
-           "1hua "I would love to make so many dishes for my beloved [player]~"
-    ]
-
-init python:
-    addEvent(Event(persistent.event_database,eventlabel="monika_weary",category=['romance'],prompt="Will you ever get tired of me?",pool=True,aff_range=(mas_aff.NORMAL, None)))
-
 [
    "1eka "Silly [player]..."
    "3hua "Of course I'll never grow weary of you!"
@@ -10185,8 +9924,25 @@ init python:
     ]
 
   ]
+
   
-  
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////  
 
 [
     if mas_isMoniEnamored(higher=True) and persistent._mas_first_kiss is not None:
@@ -11379,3 +11135,70 @@ init python:
             random=not mas_isWinter()
         )
     )
+
+[
+   "1euc "Impression? Of the other girls?"
+   "1hua "I'm not really good at doing an impression of someone, but I'll give it a try!"
+
+   ""Who should I do an impression of?{nw}"
+    $ _history_list.pop()
+    menu:
+       ""Who should I do an impression of?{fast}"
+        "Sayori.":
+           "1dsc "Hmm..."
+           ""..."
+           "1hub "[player]! [player]!"
+           ""It's me, your clumsy childhood friend that has a super deep secret crush on you, Sayori!"
+           ""I love to eat and laugh a lot, and my blazer doesn't fit because my boobs got bigger!"
+           "1hksdlb "..."
+
+            if not persistent._mas_pm_cares_about_dokis:
+               "3rksdla "I also have crippling depression."
+               ""..."
+               "3hksdlb "Ahaha! I'm sorry for that last one."
+               "3eka "It's a good thing you're not still hung up on her..."
+               "2lksdla "...Gosh, I really can't stop, can I?"
+               "2hub "Ahaha!"
+
+           "1hua "Did you like my impression? I hope you did~"
+        "Yuri.":
+           "1dsc "Yuri..."
+           ""..."
+           "1lksdla "O-oh um, hello there..."
+           "1eka "It's me, Yuri."
+           "1rksdla "I'm just your stereotypical shy girl who also happens to be a 'yandere...'"
+           ""I like tea, knives, and anything with [player]'s scent..."
+           "1hksdlb "..."
+
+            if not persistent._mas_pm_cares_about_dokis:
+               "3tku "Want to spend the weekend with me?"
+               ""..."
+
+           "2hua "Ahaha, that was kind of fun to do."
+           "3eua "Yuri was really something, wasn't she?"
+
+            if not persistent._mas_pm_cares_about_dokis:
+               "2ekc "I'm sorry again for the nasty things she did."
+               "2tku "I guess she just couldn't 'cut' it out, huh?"
+               "2hua "Ehehe~"
+        "Natsuki.":
+
+           "1sub "Oh! I know how to do an impression of her."
+           "1duu "..."
+           "2tfp "Hmph! I-it's not like I made these cupcakes for you to eat, b-baka!"
+           "6tst "I'm Natsuki, and I love to make food and all things anime and manga."
+           "2lfp "Others say that I'm cute all the time, w-which I'm totally not!"
+           ""..."
+
+            if not persistent._mas_pm_cares_about_dokis:
+               "4eka "Will you be my papa, [player]-kun?"
+               ""..."
+
+           "1hub "Ahaha! I was actually looking forward to Natsuki's cupcakes on the day of the festival."
+           "1wuo "They were really good! Especially with the creative icing that she makes."
+           "1eua "Maybe when I get better at programming, I'll make a kitchen here. That way, you can share some recipes that you want me to make for us."
+           "1hua "I would love to make so many dishes for my beloved [player]~"
+    ]
+
+init python:
+    addEvent(Event(persistent.event_database,eventlabel="monika_weary",category=['romance'],prompt="Will you ever get tired of me?",pool=True,aff_range=(mas_aff.NORMAL, None)))
