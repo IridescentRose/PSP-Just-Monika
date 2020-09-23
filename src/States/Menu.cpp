@@ -27,10 +27,12 @@ void MenuState::init()
 	triggerIntro = false;
 	reloads = v["numReload"].asInt();
 
+	int mainChoice = 0;
+
 	adc = NULL;
 	athr = new Utilities::Thread(audio_thread);
 	athr->Start(0);
-	messageRoot = Utilities::JSON::openJSON("./assets/script/messages.json");
+	messageRoot = Utilities::JSON::openJSON("./assets/script/topics.json");
 	username = v["username"].asString();
 
 	livingBG = new Monika::LivingBackground();
@@ -108,6 +110,18 @@ void MenuState::update(GameStateManager* st)
 		}
 	}
 	else {
+		if (dialog->isEngaged() && lookAtChat) {
+			dialog->update();
+
+			if (!dialog->isEngaged()) {
+				if (introPhase < mainSize) {
+					sendMainDialog();
+					dial->update();
+					dialog->update();
+				}
+			}
+		}
+
 		if (speaking && !dialog->isEngaged()) {
 			speaking = false;
 			lookAtChat = true;
@@ -218,15 +232,10 @@ void MenuState::awaken()
 
 void MenuState::randomPick()
 {
-	int choice = rand() % 61;
-
-	for (int i = 0; i < messageRoot[std::to_string(choice)].size(); i++) {
-		Dialog* d = new Dialog();
-		d->interactionType = INTERACTION_TYPE_NONE;
-		d->text = messageRoot[std::to_string(choice)][i].asString();
-
-		dial->addDialog(d);
-	}
+	mainChoice = rand() % messageRoot["topics"].size() + 1;
+	introPhase = 0;
+	mainSize = messageRoot["topics"][mainChoice].size();
+	sendMainDialog();
 }
 
 void MenuState::sendIntroDialog(int phase)
@@ -236,6 +245,15 @@ void MenuState::sendIntroDialog(int phase)
 	Dialog* d = new Dialog();
 	d->interactionType = INTERACTION_TYPE_NONE;
 	d->text = introSeq[phase]["msg"].asString();
+	dial->addDialog(d);
+}
+
+void MenuState::sendMainDialog()
+{
+	livingBG->body->setExprFilter(messageRoot["topics"][mainChoice][introPhase++].asString());
+	Dialog* d = new Dialog();
+	d->interactionType = INTERACTION_TYPE_NONE;
+	d->text = messageRoot["topics"][mainChoice][introPhase++].asString();
 	dial->addDialog(d);
 }
 

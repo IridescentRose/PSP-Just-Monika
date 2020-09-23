@@ -1,0 +1,21 @@
+{
+  "start": [
+    "1eua",
+    "Say [player], would you like to hear a fun fact?",
+    "1eub",
+    "I've been looking some up to try and teach both of us something new.",
+    "3hub",
+    "They say you learn something new every day, this way I'm making sure we actually do.",
+    "1rksdla",
+    "I found most of these online, so I can't say they're definitely true..."
+  ],
+
+  "end": [
+    "3hub",
+    "I hope you enjoyed another session of 'Learning with Monika!'"
+  ],
+
+  "facts": [
+    
+  ]
+}

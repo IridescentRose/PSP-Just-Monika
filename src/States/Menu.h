@@ -29,6 +29,7 @@ public:
 	void randomPick();
 
 	void sendIntroDialog(int phase);
+	void sendMainDialog();
 
 private:
 	Dialogue* dialog;
@@ -46,6 +47,7 @@ private:
 	int introPhase;
 
 	bool speaking;
+	int mainChoice, mainSize;
 	int timeTilNextMessage;
 };
 
